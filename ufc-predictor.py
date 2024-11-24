@@ -1,5 +1,6 @@
 import pandas as pd
 import networkx as nx
+import matplotlib.pyplot as plt
 
 # Step 1: Load the datasets
 fighter_stats_path = './fighter_stats.csv'
