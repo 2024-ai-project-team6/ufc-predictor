@@ -3,14 +3,21 @@
     edge의 방향은 추가된 경기의 승패를 나타냅니다.
     새롭게 추가된 데이터가 업데이트한 노드 사이의 엣지 방향을 예측하는 프로그램을 작성해주세요.
 
-## 전처리된 데이터 시각화
+## 데이터 시각화
+- 원본 large_dataset.csv를 이용하였습니다.
 
-![1](https://github.com/user-attachments/assets/a2cf4036-0801-4143-8780-db76a4a1011c)
+### Box Plot
 
+![1](https://github.com/user-attachments/assets/c82abd54-6fa5-423a-af0a-af230224be55)
+![2](https://github.com/user-attachments/assets/3f921a00-c024-4114-9753-bc8154cbca81)
+![3](https://github.com/user-attachments/assets/9f7b2e67-ba8d-4220-a793-18ea1d90ee34)
+![4](https://github.com/user-attachments/assets/8d7bd8bf-277f-4bfd-a5b6-babd544b143f)
+![5](https://github.com/user-attachments/assets/6d760c5a-45f3-422c-9820-f47f3850b1e5)
 
-![2](https://github.com/user-attachments/assets/51e24a5b-02d1-4cc3-ab3c-c39327aa6e52)
-![3](https://github.com/user-attachments/assets/c057b149-6369-4cbc-8985-e9aeb4909fc6)
-![4](https://github.com/user-attachments/assets/d846fd2c-2646-4fac-8c49-7e4bd6c54e64)
-![5](https://github.com/user-attachments/assets/31c3b80b-b89b-4023-9704-adcb9db23ccb)
-![6](https://github.com/user-attachments/assets/62da9f56-b6c1-423f-a11d-d43d889c85c6)
-![7](https://github.com/user-attachments/assets/4a750463-3e37-495b-b1f2-9ece5e7277f1)
+### line chart
+### (가로축은 나의 stat - 상대방의 stat을 의미합니다)
+![6](https://github.com/user-attachments/assets/9910c129-defe-4fdc-9897-5e2fb09dea01)
+![7](https://github.com/user-attachments/assets/5a7767f0-d7eb-4963-8e7b-97817c2bcb71)
+![8](https://github.com/user-attachments/assets/5f93119f-072b-43a6-9e1d-ae4a004054c5)
+![9](https://github.com/user-attachments/assets/31c22290-0903-4fc8-b0b2-51998188c68a)
+![99](https://github.com/user-attachments/assets/16b15c5a-1cfe-446b-88f1-1a234e671aa6)
