@@ -93,3 +93,39 @@
 ![ctrl_sec_diff_lineplot](https://github.com/user-attachments/assets/a2c13b7e-fe92-4904-aeba-6f233c730395)
 ![ctrl_sec_diff_boxplot](https://github.com/user-attachments/assets/58cf35c6-c110-45d1-b730-d89bb95a05ff)
 ![age_diff_lineplot](https://github.com/user-attachments/assets/fca98754-f600-4495-805d-fb39730ad999)
+
+
+## F1-Score explain
+F1-Score 공식
+F1-Score는 Precision과 Recall의 조화 평균(Harmonic Mean)입니다:
+
+F1 = 2 * (Precision*Recall) / (Precision+Recall)
+​
+Precision (정밀도): Positive로 예측한 것 중에서 실제로 Positive인 비율.
+
+Precision = True Positive (TP) / (True Positive (TP) + False Positive (FP))
+​
+
+Recall (재현율): 실제 Positive 중에서 Positive로 정확히 예측한 비율.
+
+Recall = True Positive (TP) / (True Positive (TP) + False Negative (FN))
+
+Positive F1-Score
+Positive Class (1)에 대해 Precision과 Recall을 사용하여 계산:
+Positive F1-Score = 2 * (Precision(positive) * Recall(positive)) / (Precision(positive) + Recall(positive))
+​
+Positive Class의 TP, FP, FN:
+True Positive (TP): 실제 1이고 모델이 1로 예측한 경우.
+False Positive (FP): 실제 0인데 모델이 1로 잘못 예측한 경우.
+False Negative (FN): 실제 1인데 모델이 0으로 잘못 예측한 경우.
+
+
+Negative F1-Score
+Negative Class (0)에 대해 Precision과 Recall을 사용하여 계산:
+Negative F1-Score = 2 * (Precision(negative) * Recall(negative)) / (Precision(negative) + Recall(negative))
+ 
+Negative Class의 TP, FP, FN:
+True Negative (TN): 실제 0이고 모델이 0으로 예측한 경우.
+False Positive (FP): 실제 0인데 모델이 1로 잘못 예측한 경우.
+False Negative (FN): 실제 1인데 모델이 0으로 잘못 예측한 경우.
+​
