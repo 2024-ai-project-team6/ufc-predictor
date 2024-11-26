@@ -206,6 +206,7 @@ def train_weight_class_model(weight_class, graph_data):
     # 학습용 엣지와 레이블 준비
     train_edges = graph_data['train_edges']
     val_edges = graph_data['val_edges']
+    test_edges = graph_data['test_edges']
     
     # 학습 데이터 준비
     train_edge_pairs = []
@@ -230,6 +231,18 @@ def train_weight_class_model(weight_class, graph_data):
     
     val_edge_index = torch.tensor(val_edge_pairs, dtype=torch.long).t()
     val_labels = torch.tensor(val_labels, dtype=torch.long)
+    
+    # 테스트 데이터 준비
+    test_edge_pairs = []
+    test_labels = []
+    for src, dst in test_edges:
+        test_edge_pairs.append([node_to_idx[src], node_to_idx[dst]])
+        test_labels.append(1)
+        test_edge_pairs.append([node_to_idx[dst], node_to_idx[src]])
+        test_labels.append(0)
+        
+    test_edge_index = torch.tensor(test_edge_pairs, dtype=torch.long).t()
+    test_labels = torch.tensor(test_labels, dtype=torch.long)
     
     # 학습 시작 전 초기화
     train_losses = []
@@ -271,12 +284,18 @@ def train_weight_class_model(weight_class, graph_data):
                 val_labels.cpu().numpy(), 
                 val_pred.cpu().numpy()
             )
+            test_out = model(data.x, data.edge_index, test_edge_index)
+            test_pred = test_out.argmax(dim=-1)
+            test_prec, test_rec, test_f1 = calculate_metrics(
+                test_labels.cpu().numpy(), 
+                test_pred.cpu().numpy()
+            )
         
         val_losses.append(val_loss.item())
         
         # 10 에포크마다 결과 출력
         if (epoch + 1) % 10 == 0:
-            print(f"{epoch+1:3d}\t{loss.item():.4f}\t{train_f1:.4f}\t{val_f1:.4f}")
+            print(f"{epoch+1:3d}\t{loss.item():.4f}\t{train_f1:.4f}\t{val_f1:.4f}\t{test_f1:.4f}")
     
     # 손실값 그래프 그리기
     plt.figure(figsize=(12, 6))
