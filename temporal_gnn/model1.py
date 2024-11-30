@@ -5,27 +5,39 @@ import pandas as pd
 from collections import OrderedDict
 import numpy as np
 from sklearn.metrics import f1_score
+import matplotlib.pyplot as plt
 
 class MyGNN(torch.nn.Module):
     def __init__(self, in_channels, hidden_channels):
         super().__init__()
         self.conv1 = GCNConv(in_channels, hidden_channels)
+        self.conv2 = GCNConv(hidden_channels, hidden_channels)
         
         self.edge_mlp = torch.nn.Sequential(
             torch.nn.Linear(2 * hidden_channels, hidden_channels),
             torch.nn.ReLU(),
-            torch.nn.Linear(hidden_channels, 1),
-            torch.nn.Sigmoid()
+            torch.nn.Dropout(0.2),
+            torch.nn.Linear(hidden_channels, hidden_channels),
+            torch.nn.ReLU(),
+            torch.nn.Dropout(0.2),
+            torch.nn.Linear(hidden_channels, 1)
         )
     
     def forward(self, x, edge_index):
-        node_embeddings = self.conv1(x, edge_index)
+        x = self.conv1(x, edge_index)
+        x = F.relu(x)
+        x = F.dropout(x, p=0.2, training=self.training)
         
-        source_node = node_embeddings[edge_index[0]]
-        target_node = node_embeddings[edge_index[1]]
+        x = self.conv2(x, edge_index)
+        x = F.relu(x)
+        x = F.dropout(x, p=0.2, training=self.training)
+        
+        source_node = x[edge_index[0]]
+        target_node = x[edge_index[1]]
         
         edge_features = torch.cat([source_node, target_node], dim=1)
         edge_predictions = self.edge_mlp(edge_features)
+        edge_predictions = torch.sigmoid(edge_predictions)
         return edge_predictions
     
 def load_data():
@@ -152,25 +164,49 @@ for weight_class in weight_classes:
     print("test_edge_labels", test_edge_labels.shape)
     
     # 모델 초기화
-    model = MyGNN(in_channels=node_features[weight_class].shape[1], hidden_channels=8)
-    optimizer = torch.optim.Adam(model.parameters(), lr=0.01)
+    model = MyGNN(in_channels=node_features[weight_class].shape[1], hidden_channels=32)
+    optimizer = torch.optim.Adam(model.parameters(), lr=0.002)
+    
+    # 학습 과정을 추적하기 위한 리스트 추가
+    train_losses = []
+    val_losses = []
     
     # 학습
-    for epoch in range(200):
+    for epoch in range(2000):
         model.train()
         
         optimizer.zero_grad()
         
         predictions = model(node_features[weight_class], train_edge_index)
-        
         loss = F.binary_cross_entropy(predictions.squeeze(), train_edge_labels)
         
         loss.backward()
         optimizer.step()
         
-        if (epoch + 1) % 10 == 0:
-            print(f'Epoch {epoch+1}/{100}, Loss: {loss.item():.4f}')
+        model.eval()
+        with torch.no_grad():
+            val_predictions = model(node_features[weight_class], validation_edge_index)
+            val_loss = F.binary_cross_entropy(val_predictions.squeeze(), validation_edge_labels)
             
+        # loss 값들을 리스트에 저장
+        train_losses.append(loss.item())
+        val_losses.append(val_loss.item())
+
+        if (epoch + 1) % 10 == 0:
+            print(f'Epoch {epoch+1}, Loss: {loss.item():.4f}, Val Loss: {val_loss.item():.4f}')
+    
+    # 학습이 끝난 후 그래프 그리기
+    plt.figure(figsize=(10, 6))
+    plt.plot(train_losses, label='Training Loss')
+    plt.plot(val_losses, label='Validation Loss')
+    plt.xlabel('Epoch')
+    plt.ylabel('Loss')
+    plt.title(f'Training and Validation Loss - {weight_class}')
+    plt.legend()
+    plt.grid(True)
+    plt.savefig(f'temporal_gnn/loss_plot_{weight_class}.png')
+    plt.close()
+    
     print(f'============{weight_class}============')
     print(f'최종 Loss: {loss.item():.4f}')
     # print(f'예측값: {predictions.squeeze().detach().numpy()}')
@@ -185,8 +221,12 @@ for weight_class in weight_classes:
         # 예측값을 0과 1로 이진화
         pred_labels = (final_predictions.squeeze() > 0.5).float()
         
+        train_predictions = model(node_features[weight_class], train_edge_index)
+        train_pred_labels = (train_predictions.squeeze() > 0.5).float()
+        
         # f1 스코어 계산
         f1 = f1_score(test_edge_labels.numpy(), pred_labels.numpy())
-        
+        train_f1 = f1_score(train_edge_labels.numpy(), train_pred_labels.numpy())
         print(f'테스트 Loss: {final_loss.item():.4f}')
         print(f'테스트 F1 Score: {f1:.4f}')
+        print(f'훈련 F1 Score: {train_f1:.4f}')
