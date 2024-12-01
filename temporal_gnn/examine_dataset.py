@@ -3,8 +3,8 @@
 import pandas as pd
 
 # CSV 파일 읽기
-df = pd.read_csv('dataset/large_dataset.csv')
-events = pd.read_csv('dataset/completed_events_small.csv')
+df = pd.read_csv('dataset/raw/large_dataset.csv')
+events = pd.read_csv('dataset/raw/completed_events_small.csv')
 
 # 날짜 형식 변환
 events['date'] = pd.to_datetime(events['date'])

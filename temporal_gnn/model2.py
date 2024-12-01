@@ -178,7 +178,7 @@ def evaluate_model(model, node_features, validation_edge_index, validation_edge_
 def parse_args():
     parser = argparse.ArgumentParser(description='GNN Model Training and Evaluation')
     parser.add_argument('--evaluate', type=str, help='Path to the model to evaluate')
-    parser.add_argument('--weight_class', type=str, help='Weight class to train/evaluate',
+    parser.add_argument('--weight_class', type=str, required=True, help='Weight class to train/evaluate',
                       choices=['Lightweight', 'Welterweight', 'Middleweight', 
                               'Light Heavyweight', 'Heavyweight', 'Women\'s Strawweight',
                               'Women\'s Flyweight', 'Women\'s Bantamweight'])
@@ -198,6 +198,10 @@ if __name__ == "__main__":
         validation_size = int(len(edge_labels[weight_class]) * 0.2)
         test_size = int(len(edge_labels[weight_class]) * 0.2)
         
+        print(f"train_size: {train_size}")
+        print(f"validation_size: {validation_size}")
+        print(f"test_size: {test_size}")
+        
         validation_edge_index = edge_indices[weight_class][:, train_size:train_size+validation_size]
         validation_edge_labels = edge_labels[weight_class][train_size:train_size+validation_size]
         
@@ -215,14 +219,13 @@ if __name__ == "__main__":
                       validation_edge_labels, test_edge_index, test_edge_labels)
     else:
         # 학습 모드
-        if args.weight_class:
-            weight_classes = [args.weight_class]
+        weight_classes = [args.weight_class]
             
         for weight_class in weight_classes:
             print(f'============{weight_class}============')
-            print("node_features", node_features[weight_class].shape)
-            print("edge_indices", edge_indices[weight_class].shape)
-            print("edge_labels", edge_labels[weight_class].shape)
+            # print("node_features", node_features[weight_class].shape)
+            # print("edge_indices", edge_indices[weight_class].shape)
+            # print("edge_labels", edge_labels[weight_class].shape)
             
             # 경기 수가 10 미만인 경우 패스
             if len(edge_labels[weight_class]) < 10:
@@ -243,12 +246,12 @@ if __name__ == "__main__":
             test_edge_index = edge_indices[weight_class][:, train_size+validation_size:train_size+validation_size+test_size]
             test_edge_labels = edge_labels[weight_class][train_size+validation_size:train_size+validation_size+test_size]
             
-            print("train_edge_index", train_edge_index.shape)
-            print("train_edge_labels", train_edge_labels.shape)
-            print("validation_edge_index", validation_edge_index.shape)
-            print("validation_edge_labels", validation_edge_labels.shape)
-            print("test_edge_index", test_edge_index.shape)
-            print("test_edge_labels", test_edge_labels.shape)
+            # print("train_edge_index", train_edge_index.shape)
+            # print("train_edge_labels", train_edge_labels.shape)
+            # print("validation_edge_index", validation_edge_index.shape)
+            # print("validation_edge_labels", validation_edge_labels.shape)
+            # print("test_edge_index", test_edge_index.shape)
+            # print("test_edge_labels", test_edge_labels.shape)
             
             # 모델 초기화
             model = MyGNN(in_channels=node_features[weight_class].shape[1], hidden_channels=16)
@@ -262,8 +265,21 @@ if __name__ == "__main__":
             save_dir = f'temporal_gnn/models/{weight_class}'
             os.makedirs(save_dir, exist_ok=True)
             
+            best_val_f1 = 0
+            best_val_epoch = 0
+            best_test_f1_at_best_val = 0
+            best_test_f1 = 0
+            best_test_epoch = 0
+            best_val_f1_at_best_test = 0
+            
+            # 학습 시작 전 초기화에 추가
+            best_val_loss = float('inf')
+            best_val_loss_epoch = 0
+            test_f1_at_best_val_loss = 0
+            val_f1_at_best_val_loss = 0
+            
             # 학습
-            for epoch in range(500):
+            for epoch in range(300):
                 model.train()
                 optimizer.zero_grad()
                 
@@ -308,15 +324,33 @@ if __name__ == "__main__":
                         test_pred_labels = (test_predictions.squeeze() > final_threshold).float()
                         test_f1 = f1_score(test_edge_labels.numpy(), test_pred_labels.numpy())
                         
+                        # 최고 성능 업데이트
+                        if val_f1 > best_val_f1:
+                            best_val_f1 = val_f1
+                            best_val_epoch = epoch + 1
+                            best_test_f1_at_best_val = test_f1
+                        
+                        if test_f1 > best_test_f1:
+                            best_test_f1 = test_f1
+                            best_test_epoch = epoch + 1
+                            best_val_f1_at_best_test = val_f1
+                            
+                        # validation loss 기준 최고 성능 업데이트
+                        if val_loss < best_val_loss:
+                            best_val_loss = val_loss
+                            best_val_loss_epoch = epoch + 1
+                            test_f1_at_best_val_loss = test_f1
+                            val_f1_at_best_val_loss = val_f1
+                        
                         print(f'\nEpoch {epoch+1}:')
                         print(f'Threshold: {final_threshold:.4f}')
                         print(f'Train Loss: {loss.item():.4f}')
                         print(f'Validation Loss: {val_loss.item():.4f}')
-                        print(f'Validation F1 Score: {val_f1:.4f}')
-                        print(f'Test F1 Score: {test_f1:.4f}')
             
-            # 최종 평가
-            print("\n=== 최종 모델 평가 ===")
-            model.eval()
-            evaluate_model(model, node_features[weight_class], validation_edge_index, 
-                          validation_edge_labels, test_edge_index, test_edge_labels)
+            # 학습 완료 후 최종 결과 출력
+            print("\n=== 학습 최종 결과 ===")
+            print(f"Best Validation Loss: {best_val_loss:.4f} (Epoch {best_val_loss_epoch})")
+            print(f"- At Best Val Loss - Val F1: {val_f1_at_best_val_loss:.4f}, Test F1: {test_f1_at_best_val_loss:.4f}")
+            print("")
+            print(f"Best Validation F1 Score: {best_val_f1:.4f} (Epoch {best_val_epoch}, Test F1 Score: {best_test_f1_at_best_val:.4f})")
+            print(f"Best Test F1 Score: {best_test_f1:.4f} (Epoch {best_test_epoch}, Validation F1 Score: {best_val_f1_at_best_test:.4f})")
