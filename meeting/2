@@ -1,0 +1,51 @@
+## 2024-12-01
+
+1. 정적 GNN 학습 결과
+- Train F1 Score: 0.9015
+- Test F1 Score: 0.7188 (무조건 1로 예측 하는 문제)
+- node feature는 height,weight,reach,stance 뿐으로, 승패를 판단하기에 정보가 부족
+
+- age와 아래 특성들을 함께 활용 -> 동적 그래프가 필요 ?
+	- 알고 보니 날짜와 상관 없이 age, total win 등의 정보가 24년 기준으로 고정되어 있음
+
+| Column              | Description               |
+| ------------------- | ------------------------- |
+| r_SLpM_total        | **분당 유효 타격(SLpM)** 평균     |
+| r_SApM_total        | **분당 흡수 타격(SApM)** 평균     |
+| r_sig_str_acc_total | 유효 타격 정확도(%)              |
+| r_td_acc_total      | 테이크다운 정확도(%)              |
+| r_str_def_total     | 유효 타격 방어율(%)              |
+| r_td_def_total      | 상대의 테이크다운 시도를 방어한 비율(%)   |
+| r_sub_avg           | 15분 기준 **평균 서브미션 시도 횟수**  |
+| r_td_avg            | 15분 기준 **평균 성공 테이크다운 횟수** |
+| r_wins_total        |                           |
+| r_losses_total      |                           |
+| r_age               |                           |
+
+1. 모든 fighter stats를 이용한 정적 GNN
+	Best Validation Loss: 0.6796 (Epoch 50)
+	At Best Val Loss - Val F1: 0.7050, Test F1: 0.7397
+Test F1 Score (Positive): 0.6122
+Test F1 Score (Negative): 0.4911
+Test Red 승리 예측: 90/152 (정확도: 0.5921)
+Test Blue 승리 예측: 55/107 (정확도: 0.5140)
+
+2. 베이스라인 평가
+	1. kd 제외 후 (height,weight,reach,stance) 만으로 다시 평가해보기
+	2. fighter stats에 있는 모든 정보(wins,losses,height,weight,reach,stance,age,SLpM,sig_str_acc,SApM,str_def,td_avg,td_acc,td_def,sub_avg)로 평가
+	3. 단순 정확도 (맞힌 경기 수 / 총 경기 수)
+	4. 평가 데이터셋? 시간 순으로, 테스트셋 비율? 모든 체급에 대해 평가 (경기 수 10 미만 제외)
+
+1. 데이터 시각화
+	1. 모두 r_fighter에 대한 분석. b_fighter에 대한 분석 필요성?
+
+1. 하이퍼파라미터 탐색
+	1. Cross validation
+		1. 시계열 데이터 cross validation 
+		2. 90년대 데이터는 많이 비어있어서 제외해도 될 듯
+	2. hidden_channels, dropout, learning rate, train test 비율
+	3. 모든 체급에 대해 평가
+
+GNN의 문제:
+- 처음 경기하는 선수에 대해서 예측이 어려움. 노드가 고립되어 있기 때문
+- 테스트 데이터셋에서 처음 경기하는 선수 제외한 버전으로 따로 테스트해서 성능 비교.
