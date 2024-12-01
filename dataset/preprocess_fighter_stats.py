@@ -2,8 +2,6 @@ import pandas as pd
 import numpy as np
 from sklearn.preprocessing import LabelEncoder
 
-first_row = pd.read_csv('dataset/raw/fighter_stats.csv', nrows=1, header=None)
-
 # CSV 파일 읽기
 df = pd.read_csv('dataset/raw/fighter_stats.csv', header=None, 
                  names=['name','wins','losses','height','weight','reach','stance','age','SLpM','sig_str_acc','SApM','str_def','td_avg','td_acc','td_def','sub_avg'],
@@ -56,6 +54,4 @@ print(df.head())
 print("\n=== 전처리 후 결측치 개수 ===")
 print(df.isnull().sum())
 
-# 결과 저장
-first_row.to_csv('dataset/preprocessed/fighter_stats.csv', index=False, header=False, mode='w')
-df.to_csv('dataset/preprocessed/fighter_stats.csv', index=False, header=False, mode='a')
+df.to_csv('dataset/preprocessed/fighter_stats.csv', index=False, header=True, mode='a')
