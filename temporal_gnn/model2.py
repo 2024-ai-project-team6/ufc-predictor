@@ -144,36 +144,67 @@ def evaluate_model(model, node_features, validation_edge_index, validation_edge_
         optimal_idx = np.argmax(tpr - fpr)
         optimal_threshold = thresholds[optimal_idx]
         
-        # Precision-Recall 커브를 통한 최적 임계값 찾기
-        precisions, recalls, pr_thresholds = precision_recall_curve(
-            validation_edge_labels.numpy(), val_predictions.squeeze().numpy())
-        f1_scores = 2 * (precisions * recalls) / (precisions + recalls + 1e-8)
-        optimal_pr_idx = np.argmax(f1_scores)
-        optimal_pr_threshold = pr_thresholds[optimal_pr_idx-1] if optimal_pr_idx > 0 else 0
-        
-        # 두 방법으로 구한 임계값의 평균 사용
-        final_threshold = (optimal_threshold + optimal_pr_threshold) / 2
-        print(f'Validation으로 찾은 Optimal Threshold: {final_threshold:.4f}')
+        print(f'Validation으로 찾은 Optimal Threshold: {optimal_threshold:.4f}')
         
         # 테스트 데이터에 최적 임계값 적용
         test_predictions = model(node_features, test_edge_index)
         test_loss = F.binary_cross_entropy(test_predictions.squeeze(), test_edge_labels)
-        pred_labels = (test_predictions.squeeze() > final_threshold).float()
+        pred_labels = (test_predictions.squeeze() > optimal_threshold).float()
         
+        print(f'test_predictions: {test_predictions.squeeze()}')
         print(f'예측값: {pred_labels.numpy()}')
         print(f'실제값: {test_edge_labels.numpy()}')
         
         print(f'Validation Loss: {val_loss.item():.4f}')
         print(f'Test Loss: {test_loss.item():.4f}')
         # F1 점수 계산 시 예측값을 이진값으로 변환
-        val_pred_binary = (val_predictions.squeeze() > final_threshold).float().numpy()
-        test_pred_binary = (test_predictions.squeeze() > final_threshold).float().numpy()
+        val_pred_binary = (val_predictions.squeeze() > optimal_threshold).float().numpy()
+        test_pred_binary = (test_predictions.squeeze() > optimal_threshold).float().numpy()
         
         # f1 스코어 계산 (이진값 사용)
-        f1_val = f1_score(validation_edge_labels.numpy(), val_pred_binary)
-        f1 = f1_score(test_edge_labels.numpy(), test_pred_binary)
-        print(f'Validation F1 Score: {f1_val:.4f}')
-        print(f'Test F1 Score: {f1:.4f}')
+        f1_val_pos = f1_score(validation_edge_labels.numpy(), val_pred_binary)
+        f1_val_neg = f1_score(validation_edge_labels.numpy(), val_pred_binary, pos_label=0)
+        
+        f1_test_pos = f1_score(test_edge_labels.numpy(), test_pred_binary)
+        f1_test_neg = f1_score(test_edge_labels.numpy(), test_pred_binary, pos_label=0)
+        
+        print(f'Validation F1 Score (Positive): {f1_val_pos:.4f}')
+        print(f'Validation F1 Score (Negative): {f1_val_neg:.4f}')
+        print(f'Test F1 Score (Positive): {f1_test_pos:.4f}')
+        print(f'Test F1 Score (Negative): {f1_test_neg:.4f}')
+        
+        # 검증 데이터 정확도 계산
+        val_correct = (val_pred_binary == validation_edge_labels.numpy()).sum()
+        val_total = len(validation_edge_labels)
+        val_accuracy = val_correct / val_total
+        
+        # 테스트 데이터 정확도 계산
+        test_correct = (test_pred_binary == test_edge_labels.numpy()).sum()
+        test_total = len(test_edge_labels)
+        test_accuracy = test_correct / test_total
+        
+        print("\n=== 예측 정확도 ===")
+        print(f'Validation: {val_correct}/{val_total} 경기 예측 성공 (정확도: {val_accuracy:.4f})')
+        print(f'Test: {test_correct}/{test_total} 경기 예측 성공 (정확도: {test_accuracy:.4f})')
+        
+        # Red/Blue 선수별 정확도 계산
+        val_red_correct = ((val_pred_binary == 1) & (validation_edge_labels.numpy() == 1)).sum()
+        val_red_total = (validation_edge_labels.numpy() == 1).sum()
+        val_blue_correct = ((val_pred_binary == 0) & (validation_edge_labels.numpy() == 0)).sum()
+        val_blue_total = (validation_edge_labels.numpy() == 0).sum()
+        
+        test_red_correct = ((test_pred_binary == 1) & (test_edge_labels.numpy() == 1)).sum()
+        test_red_total = (test_edge_labels.numpy() == 1).sum()
+        test_blue_correct = ((test_pred_binary == 0) & (test_edge_labels.numpy() == 0)).sum()
+        test_blue_total = (test_edge_labels.numpy() == 0).sum()
+        
+        print("\n=== Red/Blue 선수별 예측 정확도 ===")
+        print(f'Validation Red 승리 예측: {val_red_correct}/{val_red_total} (정확도: {val_red_correct/val_red_total:.4f})')
+        print(f'Validation Blue 승리 예측: {val_blue_correct}/{val_blue_total} (정확도: {val_blue_correct/val_blue_total:.4f})')
+        print(f'Test Red 승리 예측: {test_red_correct}/{test_red_total} (정확도: {test_red_correct/test_red_total:.4f})')
+        print(f'Test Blue 승리 예측: {test_blue_correct}/{test_blue_total} (정확도: {test_blue_correct/test_blue_total:.4f})')
+        
+        print(f'Test 전체 예측 정확도: {test_correct}/{test_total} (정확도: {test_accuracy:.4f})')
 
 def parse_args():
     parser = argparse.ArgumentParser(description='GNN Model Training and Evaluation')
@@ -183,6 +214,21 @@ def parse_args():
                               'Light Heavyweight', 'Heavyweight', 'Women\'s Strawweight',
                               'Women\'s Flyweight', 'Women\'s Bantamweight'])
     return parser.parse_args()
+
+def plot_losses(train_losses, val_losses, weight_class, save_dir):
+    plt.figure(figsize=(10, 6))
+    plt.plot(range(len(train_losses)), train_losses, label='Train Loss')
+    plt.plot(range(len(val_losses)), val_losses, label='Validation Loss')
+    plt.xlabel('Epoch')
+    plt.ylabel('Loss')
+    plt.title(f'Training and Validation Losses - {weight_class}')
+    plt.legend()
+    plt.grid(True)
+    
+    # 그래프 저장
+    plot_path = os.path.join(save_dir, 'model2_loss_plot.png')
+    plt.savefig(plot_path)
+    plt.close()
 
 if __name__ == "__main__":
     args = parse_args()
@@ -223,10 +269,7 @@ if __name__ == "__main__":
             
         for weight_class in weight_classes:
             print(f'============{weight_class}============')
-            # print("node_features", node_features[weight_class].shape)
-            # print("edge_indices", edge_indices[weight_class].shape)
-            # print("edge_labels", edge_labels[weight_class].shape)
-            
+
             # 경기 수가 10 미만인 경우 패스
             if len(edge_labels[weight_class]) < 10:
                 print(f"{weight_class}의 경기 수가 너무 적습니다. 건너뜁니다.")
@@ -301,27 +344,19 @@ if __name__ == "__main__":
                         val_predictions = model(node_features[weight_class], validation_edge_index)
                         val_loss = F.binary_cross_entropy(val_predictions.squeeze(), validation_edge_labels)
                         
-                        # ROC 커브와 PR 커브로 최적 임계값 찾기
+                        # ROC 커브로 최적 임계값 찾기
                         fpr, tpr, thresholds = roc_curve(validation_edge_labels.numpy(), 
                                                        val_predictions.squeeze().numpy())
                         optimal_idx = np.argmax(tpr - fpr)
                         optimal_threshold = thresholds[optimal_idx]
                         
-                        precisions, recalls, pr_thresholds = precision_recall_curve(
-                            validation_edge_labels.numpy(), val_predictions.squeeze().numpy())
-                        f1_scores = 2 * (precisions * recalls) / (precisions + recalls + 1e-8)
-                        optimal_pr_idx = np.argmax(f1_scores)
-                        optimal_pr_threshold = pr_thresholds[optimal_pr_idx-1] if optimal_pr_idx > 0 else 0
-                        
-                        final_threshold = (optimal_threshold + optimal_pr_threshold) / 2
-                        
                         # Validation F1 Score 계산
-                        val_pred_labels = (val_predictions.squeeze() > final_threshold).float()
+                        val_pred_labels = (val_predictions.squeeze() > optimal_threshold).float()
                         val_f1 = f1_score(validation_edge_labels.numpy(), val_pred_labels.numpy())
                         
                         # Test F1 Score 계산
                         test_predictions = model(node_features[weight_class], test_edge_index)
-                        test_pred_labels = (test_predictions.squeeze() > final_threshold).float()
+                        test_pred_labels = (test_predictions.squeeze() > optimal_threshold).float()
                         test_f1 = f1_score(test_edge_labels.numpy(), test_pred_labels.numpy())
                         
                         # 최고 성능 업데이트
@@ -343,9 +378,16 @@ if __name__ == "__main__":
                             val_f1_at_best_val_loss = val_f1
                         
                         print(f'\nEpoch {epoch+1}:')
-                        print(f'Threshold: {final_threshold:.4f}')
+                        print(f'Threshold: {optimal_threshold:.4f}')
                         print(f'Train Loss: {loss.item():.4f}')
                         print(f'Validation Loss: {val_loss.item():.4f}')
+                
+                        # 학습 루프 내부에서 손실값 저장 (epoch 루프 내)
+                        train_losses.append(loss.item())
+                        val_losses.append(val_loss.item())
+            
+            # 학습 완료 후 그래프 그리기 (학습 루프 종료 후)
+            plot_losses(train_losses, val_losses, weight_class, save_dir)
             
             # 학습 완료 후 최종 결과 출력
             print("\n=== 학습 최종 결과 ===")
