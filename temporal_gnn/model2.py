@@ -10,6 +10,7 @@ from sklearn.metrics import f1_score
 import matplotlib.pyplot as plt
 from sklearn.metrics import roc_curve, precision_recall_curve
 import os
+import argparse
 
 class MyGNN(torch.nn.Module):
     def __init__(self, in_channels, hidden_channels):
@@ -164,116 +165,158 @@ def evaluate_model(model, node_features, validation_edge_index, validation_edge_
         
         print(f'Validation Loss: {val_loss.item():.4f}')
         print(f'Test Loss: {test_loss.item():.4f}')
-        # f1 스코어 계산
-        f1_val = f1_score(validation_edge_labels.numpy(), val_pred_labels.numpy())
-        f1 = f1_score(test_edge_labels.numpy(), pred_labels.numpy())
+        # F1 점수 계산 시 예측값을 이진값으로 변환
+        val_pred_binary = (val_predictions.squeeze() > final_threshold).float().numpy()
+        test_pred_binary = (test_predictions.squeeze() > final_threshold).float().numpy()
+        
+        # f1 스코어 계산 (이진값 사용)
+        f1_val = f1_score(validation_edge_labels.numpy(), val_pred_binary)
+        f1 = f1_score(test_edge_labels.numpy(), test_pred_binary)
         print(f'Validation F1 Score: {f1_val:.4f}')
         print(f'Test F1 Score: {f1:.4f}')
 
-node_features, edge_indices, edge_labels, weight_classes = load_data()
+def parse_args():
+    parser = argparse.ArgumentParser(description='GNN Model Training and Evaluation')
+    parser.add_argument('--evaluate', type=str, help='Path to the model to evaluate')
+    parser.add_argument('--weight_class', type=str, help='Weight class to train/evaluate',
+                      choices=['Lightweight', 'Welterweight', 'Middleweight', 
+                              'Light Heavyweight', 'Heavyweight', 'Women\'s Strawweight',
+                              'Women\'s Flyweight', 'Women\'s Bantamweight'])
+    return parser.parse_args()
 
-print(weight_classes)
-
-for weight_class in weight_classes:
-    if weight_class != 'Light Heavyweight':
-        continue
-    print(f'============{weight_class}============')
-    print("node_features", node_features[weight_class].shape)
-    print("edge_indices", edge_indices[weight_class].shape)
-    print("edge_labels", edge_labels[weight_class].shape)
+if __name__ == "__main__":
+    args = parse_args()
+    node_features, edge_indices, edge_labels, weight_classes = load_data()
     
-    # 경기 수가 10 미만인 경우 패스
-    if len(edge_labels[weight_class]) < 10:
-        continue
-    
-    train_size = int(len(edge_labels[weight_class]) * 0.6)
-    validation_size = int(len(edge_labels[weight_class]) * 0.2)
-    test_size = int(len(edge_labels[weight_class]) * 0.2)
-    
-    # edge_indices와 edge_labels를 train, validation, test로 나누기
-    train_edge_index = edge_indices[weight_class][:, :train_size]
-    train_edge_labels = edge_labels[weight_class][:train_size]
-    
-    validation_edge_index = edge_indices[weight_class][:, train_size:train_size+validation_size]
-    validation_edge_labels = edge_labels[weight_class][train_size:train_size+validation_size]
-    
-    test_edge_index = edge_indices[weight_class][:, train_size+validation_size:train_size+validation_size+test_size]
-    test_edge_labels = edge_labels[weight_class][train_size+validation_size:train_size+validation_size+test_size]
-    
-    print("train_edge_index", train_edge_index.shape)
-    print("train_edge_labels", train_edge_labels.shape)
-    print("validation_edge_index", validation_edge_index.shape)
-    print("validation_edge_labels", validation_edge_labels.shape)
-    print("test_edge_index", test_edge_index.shape)
-    print("test_edge_labels", test_edge_labels.shape)
-    
-    # 모델 초기화
-    model = MyGNN(in_channels=node_features[weight_class].shape[1], hidden_channels=16)
-    optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
-    
-    # 학습 시작 전 초기화
-    train_losses = []
-    val_losses = []
-    
-    # 모델 저장 디렉토리 생성
-    save_dir = f'temporal_gnn/models/{weight_class}'
-    os.makedirs(save_dir, exist_ok=True)
-    
-    # 학습
-    for epoch in range(500):
-        model.train()
-        optimizer.zero_grad()
+    if args.evaluate:
+        print(f"모델 평가 모드: {args.evaluate}")
+        weight_class = args.weight_class
+        print(f"체급: {weight_class}")
         
-        predictions = model(node_features[weight_class], train_edge_index)
-        loss = F.binary_cross_entropy(predictions.squeeze(), train_edge_labels)
+        # 데이터 준비
+        train_size = int(len(edge_labels[weight_class]) * 0.6)
+        validation_size = int(len(edge_labels[weight_class]) * 0.2)
+        test_size = int(len(edge_labels[weight_class]) * 0.2)
         
-        loss.backward()
-        optimizer.step()
+        validation_edge_index = edge_indices[weight_class][:, train_size:train_size+validation_size]
+        validation_edge_labels = edge_labels[weight_class][train_size:train_size+validation_size]
         
-        if (epoch + 1) % 10 == 0:
-            # 모델 저장
-            model_path = os.path.join(save_dir, f'model_epoch_{epoch+1}.pt')
-            torch.save(model.state_dict(), model_path)
+        test_edge_index = edge_indices[weight_class][:, train_size+validation_size:train_size+validation_size+test_size]
+        test_edge_labels = edge_labels[weight_class][train_size+validation_size:train_size+validation_size+test_size]
+        
+        # 모델 불러오기
+        model = MyGNN(in_channels=node_features[weight_class].shape[1], hidden_channels=16)
+        model.load_state_dict(torch.load(f'temporal_gnn/models/{weight_class}/{args.evaluate}'))
+        model.eval()
+        
+        # 모델 평가
+        print("\n=== 모델 평가 결과 ===")
+        evaluate_model(model, node_features[weight_class], validation_edge_index, 
+                      validation_edge_labels, test_edge_index, test_edge_labels)
+    else:
+        # 학습 모드
+        if args.weight_class:
+            weight_classes = [args.weight_class]
             
-            # 평가 모드로 전환
+        for weight_class in weight_classes:
+            print(f'============{weight_class}============')
+            print("node_features", node_features[weight_class].shape)
+            print("edge_indices", edge_indices[weight_class].shape)
+            print("edge_labels", edge_labels[weight_class].shape)
+            
+            # 경기 수가 10 미만인 경우 패스
+            if len(edge_labels[weight_class]) < 10:
+                print(f"{weight_class}의 경기 수가 너무 적습니다. 건너뜁니다.")
+                continue
+            
+            train_size = int(len(edge_labels[weight_class]) * 0.6)
+            validation_size = int(len(edge_labels[weight_class]) * 0.2)
+            test_size = int(len(edge_labels[weight_class]) * 0.2)
+            
+            # edge_indices와 edge_labels를 train, validation, test로 나누기
+            train_edge_index = edge_indices[weight_class][:, :train_size]
+            train_edge_labels = edge_labels[weight_class][:train_size]
+            
+            validation_edge_index = edge_indices[weight_class][:, train_size:train_size+validation_size]
+            validation_edge_labels = edge_labels[weight_class][train_size:train_size+validation_size]
+            
+            test_edge_index = edge_indices[weight_class][:, train_size+validation_size:train_size+validation_size+test_size]
+            test_edge_labels = edge_labels[weight_class][train_size+validation_size:train_size+validation_size+test_size]
+            
+            print("train_edge_index", train_edge_index.shape)
+            print("train_edge_labels", train_edge_labels.shape)
+            print("validation_edge_index", validation_edge_index.shape)
+            print("validation_edge_labels", validation_edge_labels.shape)
+            print("test_edge_index", test_edge_index.shape)
+            print("test_edge_labels", test_edge_labels.shape)
+            
+            # 모델 초기화
+            model = MyGNN(in_channels=node_features[weight_class].shape[1], hidden_channels=16)
+            optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
+            
+            # 학습 시작 전 초기화
+            train_losses = []
+            val_losses = []
+            
+            # 모델 저장 디렉토리 생성
+            save_dir = f'temporal_gnn/models/{weight_class}'
+            os.makedirs(save_dir, exist_ok=True)
+            
+            # 학습
+            for epoch in range(500):
+                model.train()
+                optimizer.zero_grad()
+                
+                predictions = model(node_features[weight_class], train_edge_index)
+                loss = F.binary_cross_entropy(predictions.squeeze(), train_edge_labels)
+                
+                loss.backward()
+                optimizer.step()
+                
+                if (epoch + 1) % 10 == 0:
+                    # 모델 저장
+                    model_path = os.path.join(save_dir, f'model_epoch_{epoch+1}.pt')
+                    torch.save(model.state_dict(), model_path)
+                    
+                    # 평가 모드로 전환
+                    model.eval()
+                    with torch.no_grad():
+                        # Validation 데이터로 최적 임계값 찾기
+                        val_predictions = model(node_features[weight_class], validation_edge_index)
+                        val_loss = F.binary_cross_entropy(val_predictions.squeeze(), validation_edge_labels)
+                        
+                        # ROC 커브와 PR 커브로 최적 임계값 찾기
+                        fpr, tpr, thresholds = roc_curve(validation_edge_labels.numpy(), 
+                                                       val_predictions.squeeze().numpy())
+                        optimal_idx = np.argmax(tpr - fpr)
+                        optimal_threshold = thresholds[optimal_idx]
+                        
+                        precisions, recalls, pr_thresholds = precision_recall_curve(
+                            validation_edge_labels.numpy(), val_predictions.squeeze().numpy())
+                        f1_scores = 2 * (precisions * recalls) / (precisions + recalls + 1e-8)
+                        optimal_pr_idx = np.argmax(f1_scores)
+                        optimal_pr_threshold = pr_thresholds[optimal_pr_idx-1] if optimal_pr_idx > 0 else 0
+                        
+                        final_threshold = (optimal_threshold + optimal_pr_threshold) / 2
+                        
+                        # Validation F1 Score 계산
+                        val_pred_labels = (val_predictions.squeeze() > final_threshold).float()
+                        val_f1 = f1_score(validation_edge_labels.numpy(), val_pred_labels.numpy())
+                        
+                        # Test F1 Score 계산
+                        test_predictions = model(node_features[weight_class], test_edge_index)
+                        test_pred_labels = (test_predictions.squeeze() > final_threshold).float()
+                        test_f1 = f1_score(test_edge_labels.numpy(), test_pred_labels.numpy())
+                        
+                        print(f'\nEpoch {epoch+1}:')
+                        print(f'Threshold: {final_threshold:.4f}')
+                        print(f'Train Loss: {loss.item():.4f}')
+                        print(f'Validation Loss: {val_loss.item():.4f}')
+                        print(f'Validation F1 Score: {val_f1:.4f}')
+                        print(f'Test F1 Score: {test_f1:.4f}')
+            
+            # 최종 평가
+            print("\n=== 최종 모델 평가 ===")
             model.eval()
-            with torch.no_grad():
-                # Validation 데이터로 최적 임계값 찾기
-                val_predictions = model(node_features[weight_class], validation_edge_index)
-                val_loss = F.binary_cross_entropy(val_predictions.squeeze(), validation_edge_labels)
-                
-                # ROC 커브와 PR 커브로 최적 임계값 찾기
-                fpr, tpr, thresholds = roc_curve(validation_edge_labels.numpy(), 
-                                               val_predictions.squeeze().numpy())
-                optimal_idx = np.argmax(tpr - fpr)
-                optimal_threshold = thresholds[optimal_idx]
-                
-                precisions, recalls, pr_thresholds = precision_recall_curve(
-                    validation_edge_labels.numpy(), val_predictions.squeeze().numpy())
-                f1_scores = 2 * (precisions * recalls) / (precisions + recalls + 1e-8)
-                optimal_pr_idx = np.argmax(f1_scores)
-                optimal_pr_threshold = pr_thresholds[optimal_pr_idx-1] if optimal_pr_idx > 0 else 0
-                
-                final_threshold = (optimal_threshold + optimal_pr_threshold) / 2
-                
-                # Validation F1 Score 계산
-                val_pred_labels = (val_predictions.squeeze() > final_threshold).float()
-                val_f1 = f1_score(validation_edge_labels.numpy(), val_pred_labels.numpy())
-                
-                # Test F1 Score 계산
-                test_predictions = model(node_features[weight_class], test_edge_index)
-                test_pred_labels = (test_predictions.squeeze() > final_threshold).float()
-                test_f1 = f1_score(test_edge_labels.numpy(), test_pred_labels.numpy())
-                
-                print(f'\nEpoch {epoch+1}:')
-                print(f'Threshold: {final_threshold:.4f}')
-                print(f'Train Loss: {loss.item():.4f}')
-                print(f'Validation Loss: {val_loss.item():.4f}')
-                print(f'Validation F1 Score: {val_f1:.4f}')
-                print(f'Test F1 Score: {test_f1:.4f}')
-    
-    # 최종 평가
-    print("\n=== 최종 모델 평가 ===")
-    model.eval()
-    evaluate_model(model, node_features[weight_class], validation_edge_index, 
-                  validation_edge_labels, test_edge_index, test_edge_labels)
+            evaluate_model(model, node_features[weight_class], validation_edge_index, 
+                          validation_edge_labels, test_edge_index, test_edge_labels)
