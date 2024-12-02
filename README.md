@@ -94,6 +94,33 @@
 ![ctrl_sec_diff_boxplot](https://github.com/user-attachments/assets/58cf35c6-c110-45d1-b730-d89bb95a05ff)
 ![age_diff_lineplot](https://github.com/user-attachments/assets/fca98754-f600-4495-805d-fb39730ad999)
 
+# column을 그룹화 하여 분류
+- 하위 25% (Low) / 상위 25% (High) / 그 중간(MID) 총 3단계로 분류
+- 하위 25%란 수치상으로 하위 25%를 의미함. (하위로갈수록 적은 수치, 상위로 갈 수록 높은 수치를 의미)
+- red , blue 각각을 분리해서 집계한 결과가 포함
+
+## 결과
+![r_SApM_total_vs_b_SApM_total](https://github.com/user-attachments/assets/eb50bbb6-22ee-407f-8f2c-60d8b7d7601b)
+![r_SLpM_total_vs_b_SLpM_total](https://github.com/user-attachments/assets/ca2c72b6-f589-4915-afcc-b24440da08d0)
+![r_age_vs_b_age](https://github.com/user-attachments/assets/ce5ad7da-6914-4f5a-a9b1-0595f77fba95)
+![r_ctrl_sec_vs_b_ctrl_sec](https://github.com/user-attachments/assets/0009df3c-84c6-4042-8aff-21cf4f58e2d2)
+![r_height_vs_b_height](https://github.com/user-attachments/assets/eb8c9e18-5d96-4c5d-a361-0d5b57b640a2)
+![r_losses_total_vs_b_losses_total](https://github.com/user-attachments/assets/49d959a0-02a4-44b4-801f-d419f3015593)
+![r_reach_vs_b_reach](https://github.com/user-attachments/assets/30d1720f-261c-4806-94ef-b89409e44eb4)
+![r_sig_str_acc_total_vs_b_sig_str_acc_total](https://github.com/user-attachments/assets/8f5b89cd-d84b-4cbe-9e42-0c41e26b0eda)
+![r_sig_str_acc_vs_b_sig_str_acc](https://github.com/user-attachments/assets/26c5da34-a960-4abb-bee0-6c4ff30bbc36)
+![r_sig_str_att_vs_b_sig_str_att](https://github.com/user-attachments/assets/d0e88ef9-f697-40f9-9aa8-7cc38bc752cd)
+![r_sig_str_vs_b_sig_str](https://github.com/user-attachments/assets/ea898e30-c1bd-43b0-bff5-36df61864004)
+![r_str_acc_vs_b_str_acc](https://github.com/user-attachments/assets/766ef747-28af-49cc-a7c5-eb095bd6d39a)
+![r_str_att_vs_b_str_att](https://github.com/user-attachments/assets/98dc7638-7865-4d05-bb17-4cdc87e917fc)
+![r_str_def_total_vs_b_str_def_total](https://github.com/user-attachments/assets/4e3b5783-2d17-470f-926d-d258fadd7057)
+![r_str_vs_b_str](https://github.com/user-attachments/assets/388a666b-fa09-4c5d-a471-60e545d01a2a)
+![r_td_acc_total_vs_b_td_acc_total](https://github.com/user-attachments/assets/3ddc6601-6a8a-48f9-ac22-613bebb8cf69)
+![r_td_avg_vs_b_td_avg](https://github.com/user-attachments/assets/8e0829ff-7fc9-4f50-9216-27e863b44e51)
+![r_td_def_total_vs_b_td_def_total](https://github.com/user-attachments/assets/56b3cc61-6ff5-44bf-a93a-8e6d1a16b4c4)
+![r_weight_vs_b_weight](https://github.com/user-attachments/assets/d11abc85-ff55-4a3a-9dea-ff4e45c7bdca)
+![r_wins_total_vs_b_wins_total](https://github.com/user-attachments/assets/a600d86f-beac-4466-9ae3-54fb61ea410f)
+
 
 ## F1-Score explain
 F1-Score 공식
