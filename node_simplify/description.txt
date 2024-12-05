@@ -1,3 +1,12 @@
 노드 단순화 작업을 하는 공간입니다.
 데이터 전처리부터 노드 classification까지의 작업을 하는
 ipynb 파일들과 설명 파일을 저장하겠습니다.
+
+1. ufc 승부예측 모델
+2. 사용하는 특성 : r_fighter, b_fighter, winner, is_title_bout, gender, method, finish_round, total_rounds, time_sec, referee, r_kd, r_sig_str, r_sig_str_att, r_sig_str_acc, r_str, r_str_att, r_str_acc, r_td, r_td_att, r_td_acc, r_sub_att, r_rev, r_ctrl_sec, r_wins_total, r_losses_total, r_age, r_height, r_weight, r_reach, r_stance, r_SLpM_total, r_SApM_total, r_sig_str_acc_total, r_td_acc_total, r_str_def_total, r_td_def_total, r_sub_avg, r_td_avg, b_kd, b_sig_str, b_sig_str_att, b_sig_str_acc, b_str, b_str_att, b_str_acc, b_td, b_td_att, b_td_acc, b_sub_att, b_rev, b_ctrl_sec, b_wins_total, b_losses_total, b_age, b_height, b_weight, b_reach, b_stance, b_SLpM_total, b_SApM_total, b_sig_str_acc_total, b_td_acc_total, b_str_def_total, b_td_def_total, b_sub_avg, b_td_avg
+(이 attribute들 모두 사용하거나 이 중 일부만 사용하는 것 둘 다 가능)
+3. 선수들 특성별로 분류해서 node 적절한 개수로 압축
+4. 선수의 특성은 시간에 따라 바뀔 수 있음. 예를 들어, 테이크다운 디펜스가 약한 선수가 테이크다운 디펜스가 강한 선수로 변화할 수 있음. 이럴 경우 다른 노드로 변화.
+5. 하나의 경기마다 두 가지 node에 대한 edge로 반영
+6. node와 edge를 모은 그래프 년 단위로 갱신. 예를 들어, A 그룹 선수가 B 그룹 선수에게 초반 라운드 패배 -> 후반 라운드 패배 -> 초반 라운드 승리했다면, 같은 그룹끼리의 다음 경기에서는 A 그룹 선수의 승리를 예측하는 방향으로.
+7. 오래 경기를 하지 않은 선수는 점점 감점에 들어가는 방향.
