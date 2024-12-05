@@ -24,26 +24,47 @@ class MyGNN(torch.nn.Module):
     def __init__(self, in_channels, hidden_channels):
         super().__init__()
         self.conv1 = GCNConv(in_channels, hidden_channels)
-        self.conv2 = GCNConv(hidden_channels, hidden_channels)
+        self.conv2 = GCNConv(hidden_channels, hidden_channels * 2)
+        self.conv3 = GCNConv(hidden_channels * 2, hidden_channels * 4)
+        self.conv4 = GCNConv(hidden_channels * 4, hidden_channels * 8)
+        self.conv5 = GCNConv(hidden_channels * 8, hidden_channels * 16)
         
         self.edge_mlp = torch.nn.Sequential(
-            torch.nn.Linear(2 * hidden_channels, hidden_channels),
+            torch.nn.Linear(2 * 16 * hidden_channels, hidden_channels*16),
             torch.nn.ReLU(),
             torch.nn.Dropout(0.2),
-            torch.nn.Linear(hidden_channels, hidden_channels),
+            torch.nn.Linear(hidden_channels*16, hidden_channels*8),
             torch.nn.ReLU(),
             torch.nn.Dropout(0.2),
-            torch.nn.Linear(hidden_channels, 1)
+            torch.nn.Linear(hidden_channels*8, hidden_channels*4),
+            torch.nn.ReLU(),
+            torch.nn.Dropout(0.2),
+            torch.nn.Linear(hidden_channels*4, hidden_channels*2),
+            torch.nn.ReLU(),
+            torch.nn.Dropout(0.2),
+            torch.nn.Linear(hidden_channels*2, 1)
         )
-    
+        
     def forward(self, x, edge_index):
         x = self.conv1(x, edge_index)
         x = F.relu(x)
-        x = F.dropout(x, p=0.2, training=self.training)
+        x = F.dropout(x, p=DROP_RATE, training=self.training)
         
         x = self.conv2(x, edge_index)
         x = F.relu(x)
-        x = F.dropout(x, p=0.2, training=self.training)
+        x = F.dropout(x, p=DROP_RATE, training=self.training)
+        
+        x = self.conv3(x, edge_index)
+        x = F.relu(x)
+        x = F.dropout(x, p=DROP_RATE, training=self.training)
+        
+        x = self.conv4(x, edge_index)
+        x = F.relu(x)
+        x = F.dropout(x, p=DROP_RATE, training=self.training)
+        
+        x = self.conv5(x, edge_index)
+        x = F.relu(x)
+        x = F.dropout(x, p=DROP_RATE, training=self.training)
         
         source_node = x[edge_index[0]]
         target_node = x[edge_index[1]]
