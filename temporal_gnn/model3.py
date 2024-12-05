@@ -11,6 +11,14 @@ import matplotlib.pyplot as plt
 from sklearn.metrics import roc_curve, precision_recall_curve
 import os
 import argparse
+import itertools
+
+THRESHOLD = 0.5
+DROP_RATE = 0.2
+EPOCHS = 500
+LEARNING_RATE = 0.001
+HIDDEN_CHANNELS = 8
+
 
 class MyGNN(torch.nn.Module):
     def __init__(self, in_channels, hidden_channels):
@@ -47,14 +55,20 @@ class MyGNN(torch.nn.Module):
     
 def load_data():
     fighter_stats_path = 'dataset/preprocessed/fighter_stats.csv'
-    event_dataset_path = './event_dataset_2.csv'
+    event_dataset_path = 'dataset/preprocessed/event_list_shuffled.csv'
 
     fighter_stats = pd.read_csv(fighter_stats_path)
     event_dataset = pd.read_csv(event_dataset_path)
     
+    # 날짜를 datetime 형식으로 변환
     event_dataset['date'] = pd.to_datetime(event_dataset['date'])
     
+    # 2001년 이상의 데이터만 필터링
+    event_dataset = event_dataset[event_dataset['date'].dt.year >= 2001]
+    
+    # 날짜 기준으로 정렬
     event_dataset = event_dataset.sort_values(by='date')
+    
     
     weight_classes = event_dataset['weight_class'].unique()
     sorted_weight_class_datasets = OrderedDict()
@@ -144,12 +158,11 @@ def evaluate_model(model, node_features, validation_edge_index, validation_edge_
         optimal_idx = np.argmax(tpr - fpr)
         optimal_threshold = thresholds[optimal_idx]
         
-        print(f'Validation으로 찾은 Optimal Threshold: {optimal_threshold:.4f}')
         
         # 테스트 데이터에 최적 임계값 적용
         test_predictions = model(node_features, test_edge_index)
         test_loss = F.binary_cross_entropy(test_predictions.squeeze(), test_edge_labels)
-        pred_labels = (test_predictions.squeeze() > optimal_threshold).float()
+        pred_labels = (test_predictions.squeeze() > THRESHOLD).float()
         
         print(f'test_predictions: {test_predictions.squeeze()}')
         print(f'예측값: {pred_labels.numpy()}')
@@ -158,8 +171,8 @@ def evaluate_model(model, node_features, validation_edge_index, validation_edge_
         print(f'Validation Loss: {val_loss.item():.4f}')
         print(f'Test Loss: {test_loss.item():.4f}')
         # F1 점수 계산 시 예측값을 이진값으로 변환
-        val_pred_binary = (val_predictions.squeeze() > optimal_threshold).float().numpy()
-        test_pred_binary = (test_predictions.squeeze() > optimal_threshold).float().numpy()
+        val_pred_binary = (val_predictions.squeeze() > THRESHOLD).float().numpy()
+        test_pred_binary = (test_predictions.squeeze() > THRESHOLD).float().numpy()
         
         # f1 스코어 계산 (이진값 사용)
         f1_val_pos = f1_score(validation_edge_labels.numpy(), val_pred_binary)
@@ -226,7 +239,7 @@ def plot_losses(train_losses, val_losses, weight_class, save_dir):
     plt.grid(True)
     
     # 그래프 저장
-    plot_path = os.path.join(save_dir, 'model2_loss_plot.png')
+    plot_path = os.path.join(save_dir, 'model3_loss_plot.png')
     plt.savefig(plot_path)
     plt.close()
 
@@ -255,7 +268,7 @@ if __name__ == "__main__":
         test_edge_labels = edge_labels[weight_class][train_size+validation_size:train_size+validation_size+test_size]
         
         # 모델 불러오기
-        model = MyGNN(in_channels=node_features[weight_class].shape[1], hidden_channels=16)
+        model = MyGNN(in_channels=node_features[weight_class].shape[1], hidden_channels=HIDDEN_CHANNELS)
         model.load_state_dict(torch.load(f'temporal_gnn/models/{weight_class}/{args.evaluate}'))
         model.eval()
         
@@ -279,6 +292,10 @@ if __name__ == "__main__":
             validation_size = int(len(edge_labels[weight_class]) * 0.2)
             test_size = int(len(edge_labels[weight_class]) * 0.2)
             
+            print(f"train_size: {train_size}")
+            print(f"validation_size: {validation_size}")
+            print(f"test_size: {test_size}")
+            
             # edge_indices와 edge_labels를 train, validation, test로 나누기
             train_edge_index = edge_indices[weight_class][:, :train_size]
             train_edge_labels = edge_labels[weight_class][:train_size]
@@ -297,8 +314,8 @@ if __name__ == "__main__":
             # print("test_edge_labels", test_edge_labels.shape)
             
             # 모델 초기화
-            model = MyGNN(in_channels=node_features[weight_class].shape[1], hidden_channels=16)
-            optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
+            model = MyGNN(in_channels=node_features[weight_class].shape[1], hidden_channels=HIDDEN_CHANNELS)
+            optimizer = torch.optim.Adam(model.parameters(), lr=LEARNING_RATE)
             
             # 학습 시작 전 초기화
             train_losses = []
@@ -321,8 +338,16 @@ if __name__ == "__main__":
             test_f1_at_best_val_loss = 0
             val_f1_at_best_val_loss = 0
             
+            # 최고 정확도 추적 변수 초기화
+            best_val_accuracy = 0
+            best_val_accuracy_epoch = 0
+            best_test_accuracy = 0
+            best_test_accuracy_epoch = 0
+            best_test_accuracy_at_best_val = 0
+            best_val_accuracy_at_best_test = 0
+            
             # 학습
-            for epoch in range(300):
+            for epoch in range(EPOCHS):
                 model.train()
                 optimizer.zero_grad()
                 
@@ -332,7 +357,7 @@ if __name__ == "__main__":
                 loss.backward()
                 optimizer.step()
                 
-                if (epoch + 1) % 10 == 0:
+                if (epoch + 1) % 1 == 0:
                     # 모델 저장
                     model_path = os.path.join(save_dir, f'model_epoch_{epoch+1}.pt')
                     torch.save(model.state_dict(), model_path)
@@ -344,19 +369,17 @@ if __name__ == "__main__":
                         val_predictions = model(node_features[weight_class], validation_edge_index)
                         val_loss = F.binary_cross_entropy(val_predictions.squeeze(), validation_edge_labels)
                         
-                        # ROC 커브로 최적 임계값 찾기
-                        fpr, tpr, thresholds = roc_curve(validation_edge_labels.numpy(), 
-                                                       val_predictions.squeeze().numpy())
-                        optimal_idx = np.argmax(tpr - fpr)
-                        optimal_threshold = thresholds[optimal_idx]
-                        
                         # Validation F1 Score 계산
-                        val_pred_labels = (val_predictions.squeeze() > optimal_threshold).float()
+                        val_pred_labels = (val_predictions.squeeze() > THRESHOLD).float()
                         val_f1 = f1_score(validation_edge_labels.numpy(), val_pred_labels.numpy())
+                        
+                        # Validation 정확도 계산
+                        val_correct = (val_pred_labels == validation_edge_labels).sum().item()
+                        val_accuracy = val_correct / len(validation_edge_labels)
                         
                         # Test F1 Score 계산
                         test_predictions = model(node_features[weight_class], test_edge_index)
-                        test_pred_labels = (test_predictions.squeeze() > optimal_threshold).float()
+                        test_pred_labels = (test_predictions.squeeze() > THRESHOLD).float()
                         test_f1 = f1_score(test_edge_labels.numpy(), test_pred_labels.numpy())
                         
                         # 최고 성능 업데이트
@@ -376,15 +399,30 @@ if __name__ == "__main__":
                             best_val_loss_epoch = epoch + 1
                             test_f1_at_best_val_loss = test_f1
                             val_f1_at_best_val_loss = val_f1
+                            
+                        # Test 정확도 계산
+                        test_correct = (test_pred_labels == test_edge_labels).sum().item()
+                        test_accuracy = test_correct / len(test_edge_labels)
                         
-                        print(f'\nEpoch {epoch+1}:')
-                        print(f'Threshold: {optimal_threshold:.4f}')
-                        print(f'Train Loss: {loss.item():.4f}')
-                        print(f'Validation Loss: {val_loss.item():.4f}')
+                        # 최고 Test 정확도 업데이트
+                        if test_accuracy > best_test_accuracy:
+                            best_test_accuracy = test_accuracy
+                            best_test_accuracy_epoch = epoch + 1
+                            best_val_accuracy_at_best_test = val_accuracy
+                        
+                        # print(f'\nEpoch {epoch+1}:')
+                        # print(f'Train Loss: {loss.item():.4f}')
+                        # print(f'Validation Loss: {val_loss.item():.4f}')
                 
                         # 학습 루프 내부에서 손실값 저장 (epoch 루프 내)
                         train_losses.append(loss.item())
                         val_losses.append(val_loss.item())
+                        
+                        # 최고 Validation 정확도 업데이트
+                        if val_accuracy > best_val_accuracy:
+                            best_val_accuracy = val_accuracy
+                            best_val_accuracy_epoch = epoch + 1
+                            best_test_accuracy_at_best_val = test_accuracy
             
             # 학습 완료 후 그래프 그리기 (학습 루프 종료 후)
             plot_losses(train_losses, val_losses, weight_class, save_dir)
@@ -396,3 +434,5 @@ if __name__ == "__main__":
             print("")
             print(f"Best Validation F1 Score: {best_val_f1:.4f} (Epoch {best_val_epoch}, Test F1 Score: {best_test_f1_at_best_val:.4f})")
             print(f"Best Test F1 Score: {best_test_f1:.4f} (Epoch {best_test_epoch}, Validation F1 Score: {best_val_f1_at_best_test:.4f})")
+            print(f"Best Validation Accuracy: {best_val_accuracy:.4f} (Epoch {best_val_accuracy_epoch}, Test Accuracy: {best_test_accuracy_at_best_val:.4f})")
+            print(f"Best Test Accuracy: {best_test_accuracy:.4f} (Epoch {best_test_accuracy_epoch}, Validation Accuracy: {best_val_accuracy_at_best_test:.4f})")
