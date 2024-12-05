@@ -121,6 +121,40 @@
 ![r_weight_vs_b_weight](https://github.com/user-attachments/assets/d11abc85-ff55-4a3a-9dea-ff4e45c7bdca)
 ![r_wins_total_vs_b_wins_total](https://github.com/user-attachments/assets/a600d86f-beac-4466-9ae3-54fb61ea410f)
 
+## red / blue 통합 시각화
+- 최솟값 / 최댓값 범위로 4등분후 오름차순 정렬
+- 이렇게 한 이유는, 25% , 50% , 25%로 쪼개게 되면 중복되는 수가 너무많은 컬럼의 경우 히스토그램을 생성할수없기 때문
+
+![r_wins_total_win_rate](https://github.com/user-attachments/assets/d2dfe14e-928e-4b3a-9bac-74187c855553)
+![r_weight_win_rate](https://github.com/user-attachments/assets/afab488e-e0f3-4fb6-9a24-616b2ae52071)
+![r_td_win_rate](https://github.com/user-attachments/assets/6c26fe00-fe6b-4c75-a8d5-60a9521c2977)
+![r_td_def_total_win_rate](https://github.com/user-attachments/assets/6ec4237b-225d-4648-87e8-06b11672ed12)
+![r_td_avg_win_rate](https://github.com/user-attachments/assets/74ed8bad-826d-4e5a-98e2-95aaeeb3e435)
+![r_td_att_win_rate](https://github.com/user-attachments/assets/03a5bea1-9237-481d-86b2-6825719985bd)
+![r_td_acc_win_rate](https://github.com/user-attachments/assets/627fd643-1c6a-486e-9246-621b11826fcd)
+![r_td_acc_total_win_rate](https://github.com/user-attachments/assets/67aac156-8f84-4382-a1e0-72bd4078275d)
+![r_sub_avg_win_rate](https://github.com/user-attachments/assets/64068a57-d2da-4c80-9bfb-57fff811a69e)
+![r_sub_att_win_rate](https://github.com/user-attachments/assets/e3fab2a7-8edb-45d3-9835-100ced256144)
+![r_str_win_rate](https://github.com/user-attachments/assets/f9da9f65-3c8d-40cd-869b-517145f24f2d)
+![r_str_def_total_win_rate](https://github.com/user-attachments/assets/768fdce5-c4eb-4b21-94d6-d59a142074f1)
+![r_str_att_win_rate](https://github.com/user-attachments/assets/e73e43d7-8d71-4086-9dd7-1c781ce12fac)
+![r_str_acc_win_rate](https://github.com/user-attachments/assets/68fddd41-9667-42b7-b797-e4e5d6ee5b54)
+![r_SLpM_total_win_rate](https://github.com/user-attachments/assets/f02fc261-0eed-4e5c-b434-e9cccedf5faf)
+![r_sig_str_win_rate](https://github.com/user-attachments/assets/b9352cc5-de33-447f-8a1c-0850810b13cf)
+![r_sig_str_att_win_rate](https://github.com/user-attachments/assets/0c77a5c9-b63a-4b87-ba2b-8325d9aef03a)
+![r_sig_str_acc_win_rate](https://github.com/user-attachments/assets/2f745542-c5c2-4276-af2a-ab45dd271860)
+![r_sig_str_acc_total_win_rate](https://github.com/user-attachments/assets/8699df9c-c5e2-4072-b97c-2e745943f2ec)
+![r_SApM_total_win_rate](https://github.com/user-attachments/assets/f72eb498-3535-4292-bc8f-7470dcbd1df5)
+![r_rev_win_rate](https://github.com/user-attachments/assets/d150ac73-3b02-48e1-92a5-94dfd1903d38)
+![r_reach_win_rate](https://github.com/user-attachments/assets/93f5d53a-0f3a-49a8-b9b3-77ba8c01a1fa)
+![r_losses_total_win_rate](https://github.com/user-attachments/assets/2d53bea5-1730-4e66-96df-42b1596b073f)
+![r_kd_win_rate](https://github.com/user-attachments/assets/81eaef0e-2ab5-4ba4-9e53-1927d57eef06)
+![r_height_win_rate](https://github.com/user-attachments/assets/ff235250-39e5-45e0-94f1-9ebe3564af3b)
+![r_ctrl_sec_win_rate](https://github.com/user-attachments/assets/c2c39cff-2f4b-4fc2-8ba3-d6bb431b1941)
+![r_age_win_rate](https://github.com/user-attachments/assets/b73220b0-b502-4371-b0bb-92c872fa0dd2)
+
+
+
 
 ## F1-Score explain
 F1-Score 공식
