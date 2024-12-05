@@ -1,0 +1,20 @@
+1. feature
+  경기 중에 나오는 4가지 feature로만 평가 / 모든 feature로 평가
+  
+2. train:val:test
+  8:1:1 / 6:2:2 / 6:3:1
+    
+3. 데이터 분리
+    모든 체급에 대해 학습
+    (경기 수 10 미만인 체급은 제외) 
+    
+4. 평가 수단
+    val accuracy & val f1-score & test accuracy & test f1-score
+    
+5. Epoch
+    50
+    (gnn과 통일)
+    
+6. 모델
+    svm / randomforest / xgboost / logisticregression
+    (1주차와 동일한 4가지 모델로 학습)
