@@ -11,13 +11,13 @@ import matplotlib.pyplot as plt
 from sklearn.metrics import roc_curve, precision_recall_curve
 import os
 import argparse
-import itertools
+import json
 
 THRESHOLD = 0.5
 DROP_RATE = 0.2
 EPOCHS = 500
-LEARNING_RATE = 0.001
-HIDDEN_CHANNELS = 8
+LEARNING_RATE = 0.01
+HIDDEN_CHANNELS = 16
 
 
 class MyGNN(torch.nn.Module):
@@ -127,6 +127,7 @@ def load_data():
     node_features = {}
     edge_indices = {}  # 체급별 edge_index를 저장할 딕셔너리
     edge_labels = {}
+    edge_counts = {}  # 각 파이터의 엣지 수를 저장할 딕셔너리 추가
     for weight_class, wc_data in sorted_weight_class_datasets.items():
         # 해당 체급의 모든 선수 목록
         fighters = list(node_features_dict[weight_class].keys())
@@ -147,7 +148,9 @@ def load_data():
         # 경기 결과 저장 (1: red 승리, 0: blue 승리)
         labels = []
         
-        # 각 경기에 대해 edge 생성
+        # 각 파이터의 엣지 수를 저장할 딕셔너리 초기화
+        fighter_edge_count = {name: 0 for name in fighters}
+        
         for _, fight in wc_data.iterrows():
             r_fighter = fight['r_fighter']
             b_fighter = fight['b_fighter']
@@ -157,6 +160,20 @@ def load_data():
             targets.append(fighter_to_idx[b_fighter])
             labels.append(1 if winner == "Red" else 0)
         
+        # train_data에 대해서만 엣지 수 증가
+        train_size = int(len(wc_data) * 0.6)
+        train_data = wc_data.iloc[:train_size]
+        for _, fight in train_data.iterrows():
+            r_fighter = fight['r_fighter']
+            b_fighter = fight['b_fighter']
+            
+            # 각 파이터의 엣지 수 증가
+            fighter_edge_count[r_fighter] += 1
+            fighter_edge_count[b_fighter] += 1
+        
+        # 엣지 수를 저장
+        edge_counts[weight_class] = fighter_edge_count
+        
         # 리스트를 텐서로 변환
         edge_index = torch.tensor([sources, targets], dtype=torch.long)
         edge_indices[weight_class] = edge_index
@@ -164,10 +181,10 @@ def load_data():
         labels = torch.tensor(labels, dtype=torch.float)
         edge_labels[weight_class] = labels
     
-    return node_features, edge_indices, edge_labels, weight_classes
+    return node_features, edge_indices, edge_labels, weight_classes, sorted_weight_class_datasets, edge_counts
 
 def evaluate_model(model, node_features, validation_edge_index, validation_edge_labels, 
-                  test_edge_index, test_edge_labels):
+                  test_edge_index, test_edge_labels, raw_data, edge_counts):
     with torch.no_grad():
         # 검증 데이터로 최적 임계값 찾기
         val_predictions = model(node_features, validation_edge_index)
@@ -184,6 +201,22 @@ def evaluate_model(model, node_features, validation_edge_index, validation_edge_
         test_predictions = model(node_features, test_edge_index)
         test_loss = F.binary_cross_entropy(test_predictions.squeeze(), test_edge_labels)
         pred_labels = (test_predictions.squeeze() > THRESHOLD).float()
+        
+        results = []
+        for i, (pred, label) in enumerate(zip(pred_labels.numpy(), test_edge_labels.numpy())):
+            result = {
+                'date': str(raw_data.iloc[i]['date']),
+                'r_fighter': raw_data.iloc[i]['r_fighter'],
+                'b_fighter': raw_data.iloc[i]['b_fighter'],
+                'r_edge_count': edge_counts[raw_data.iloc[i]['r_fighter']],
+                'b_edge_count': edge_counts[raw_data.iloc[i]['b_fighter']],
+                'success': int(pred == label)
+            }
+            results.append(result)
+            
+        # 결과를 파일로 저장
+        with open(f'results/{weight_class}.json', 'w') as f:
+            json.dump(results, f, indent=4)
         
         print(f'test_predictions: {test_predictions.squeeze()}')
         print(f'예측값: {pred_labels.numpy()}')
@@ -266,7 +299,7 @@ def plot_losses(train_losses, val_losses, weight_class, save_dir):
 
 if __name__ == "__main__":
     args = parse_args()
-    node_features, edge_indices, edge_labels, weight_classes = load_data()
+    node_features, edge_indices, edge_labels, weight_classes, wc_data, edge_counts = load_data()
     
     if args.evaluate:
         print(f"모델 평가 모드: {args.evaluate}")
@@ -280,13 +313,13 @@ if __name__ == "__main__":
         
         print(f"train_size: {train_size}")
         print(f"validation_size: {validation_size}")
-        print(f"test_size: {test_size}")
+        print(f"test_size: {len(edge_labels[weight_class]) - train_size - validation_size}")
         
         validation_edge_index = edge_indices[weight_class][:, train_size:train_size+validation_size]
         validation_edge_labels = edge_labels[weight_class][train_size:train_size+validation_size]
         
-        test_edge_index = edge_indices[weight_class][:, train_size+validation_size:train_size+validation_size+test_size]
-        test_edge_labels = edge_labels[weight_class][train_size+validation_size:train_size+validation_size+test_size]
+        test_edge_index = edge_indices[weight_class][:, train_size+validation_size:]
+        test_edge_labels = edge_labels[weight_class][train_size+validation_size:]
         
         # 모델 불러오기
         model = MyGNN(in_channels=node_features[weight_class].shape[1], hidden_channels=HIDDEN_CHANNELS)
@@ -296,7 +329,7 @@ if __name__ == "__main__":
         # 모델 평가
         print("\n=== 모델 평가 결과 ===")
         evaluate_model(model, node_features[weight_class], validation_edge_index, 
-                      validation_edge_labels, test_edge_index, test_edge_labels)
+                      validation_edge_labels, test_edge_index, test_edge_labels, wc_data[weight_class][train_size+validation_size:], edge_counts[weight_class])
     else:
         # 학습 모드
         weight_classes = [args.weight_class]
@@ -324,8 +357,8 @@ if __name__ == "__main__":
             validation_edge_index = edge_indices[weight_class][:, train_size:train_size+validation_size]
             validation_edge_labels = edge_labels[weight_class][train_size:train_size+validation_size]
             
-            test_edge_index = edge_indices[weight_class][:, train_size+validation_size:train_size+validation_size+test_size]
-            test_edge_labels = edge_labels[weight_class][train_size+validation_size:train_size+validation_size+test_size]
+            test_edge_index = edge_indices[weight_class][:, train_size+validation_size:]
+            test_edge_labels = edge_labels[weight_class][train_size+validation_size:]
             
             # print("train_edge_index", train_edge_index.shape)
             # print("train_edge_labels", train_edge_labels.shape)
