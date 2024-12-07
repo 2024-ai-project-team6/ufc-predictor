@@ -1,0 +1,442 @@
+[
+    {
+        "date": "2022-07-16 00:00:00",
+        "r_fighter": "Michelle Waterson-Gomez",
+        "b_fighter": "Amanda Lemos",
+        "r_edge_count": 10,
+        "b_edge_count": 2,
+        "success": 1
+    },
+    {
+        "date": "2022-07-16 00:00:00",
+        "r_fighter": "Jessica Penne",
+        "b_fighter": "Emily Ducote",
+        "r_edge_count": 3,
+        "b_edge_count": 0,
+        "success": 1
+    },
+    {
+        "date": "2022-08-06 00:00:00",
+        "r_fighter": "Miranda Granger",
+        "b_fighter": "Cory McKenna",
+        "r_edge_count": 1,
+        "b_edge_count": 0,
+        "success": 1
+    },
+    {
+        "date": "2022-08-13 00:00:00",
+        "r_fighter": "Yazmin Jauregui",
+        "b_fighter": "Iasmin Lucindo",
+        "r_edge_count": 0,
+        "b_edge_count": 0,
+        "success": 1
+    },
+    {
+        "date": "2022-09-10 00:00:00",
+        "r_fighter": "Elise Reed",
+        "b_fighter": "Melissa Martinez",
+        "r_edge_count": 0,
+        "b_edge_count": 0,
+        "success": 1
+    },
+    {
+        "date": "2022-09-17 00:00:00",
+        "r_fighter": "Loma Lookboonmee",
+        "b_fighter": "Denise Gomes",
+        "r_edge_count": 2,
+        "b_edge_count": 0,
+        "success": 0
+    },
+    {
+        "date": "2022-10-01 00:00:00",
+        "r_fighter": "Yan Xiaonan",
+        "b_fighter": "Mackenzie Dern",
+        "r_edge_count": 5,
+        "b_edge_count": 4,
+        "success": 0
+    },
+    {
+        "date": "2022-10-15 00:00:00",
+        "r_fighter": "Piera Rodriguez",
+        "b_fighter": "Sam Hughes",
+        "r_edge_count": 0,
+        "b_edge_count": 0,
+        "success": 0
+    },
+    {
+        "date": "2022-11-05 00:00:00",
+        "r_fighter": "Marina Rodriguez",
+        "b_fighter": "Amanda Lemos",
+        "r_edge_count": 3,
+        "b_edge_count": 2,
+        "success": 1
+    },
+    {
+        "date": "2022-11-05 00:00:00",
+        "r_fighter": "Polyana Viana",
+        "b_fighter": "Jinh Yu Frey",
+        "r_edge_count": 4,
+        "b_edge_count": 1,
+        "success": 0
+    },
+    {
+        "date": "2022-11-12 00:00:00",
+        "r_fighter": "Karolina Kowalkiewicz",
+        "b_fighter": "Silvana Gomez Juarez",
+        "r_edge_count": 10,
+        "b_edge_count": 0,
+        "success": 0
+    },
+    {
+        "date": "2022-11-19 00:00:00",
+        "r_fighter": "Maria Oliveira",
+        "b_fighter": "Vanessa Demopoulos",
+        "r_edge_count": 0,
+        "b_edge_count": 0,
+        "success": 1
+    },
+    {
+        "date": "2022-12-03 00:00:00",
+        "r_fighter": "Angela Hill",
+        "b_fighter": "Emily Ducote",
+        "r_edge_count": 16,
+        "b_edge_count": 0,
+        "success": 1
+    },
+    {
+        "date": "2022-12-03 00:00:00",
+        "r_fighter": "Istela Nunes",
+        "b_fighter": "Yazmin Jauregui",
+        "r_edge_count": 0,
+        "b_edge_count": 0,
+        "success": 1
+    },
+    {
+        "date": "2022-12-17 00:00:00",
+        "r_fighter": "Cheyanne Vlismas",
+        "b_fighter": "Cory McKenna",
+        "r_edge_count": 0,
+        "b_edge_count": 0,
+        "success": 1
+    },
+    {
+        "date": "2023-02-11 00:00:00",
+        "r_fighter": "Loma Lookboonmee",
+        "b_fighter": "Elise Reed",
+        "r_edge_count": 2,
+        "b_edge_count": 0,
+        "success": 0
+    },
+    {
+        "date": "2023-03-04 00:00:00",
+        "r_fighter": "Tabatha Ricci",
+        "b_fighter": "Jessica Penne",
+        "r_edge_count": 0,
+        "b_edge_count": 3,
+        "success": 1
+    },
+    {
+        "date": "2023-04-08 00:00:00",
+        "r_fighter": "Loopy Godinez",
+        "b_fighter": "Cynthia Calvillo",
+        "r_edge_count": 0,
+        "b_edge_count": 6,
+        "success": 0
+    },
+    {
+        "date": "2023-04-08 00:00:00",
+        "r_fighter": "Sam Hughes",
+        "b_fighter": "Jaqueline Amorim",
+        "r_edge_count": 0,
+        "b_edge_count": 0,
+        "success": 0
+    },
+    {
+        "date": "2023-04-08 00:00:00",
+        "r_fighter": "Michelle Waterson-Gomez",
+        "b_fighter": "Luana Pinheiro",
+        "r_edge_count": 10,
+        "b_edge_count": 0,
+        "success": 1
+    },
+    {
+        "date": "2023-04-15 00:00:00",
+        "r_fighter": "Bruna Brasil",
+        "b_fighter": "Denise Gomes",
+        "r_edge_count": 0,
+        "b_edge_count": 0,
+        "success": 1
+    },
+    {
+        "date": "2023-04-15 00:00:00",
+        "r_fighter": "Piera Rodriguez",
+        "b_fighter": "Gillian Robertson",
+        "r_edge_count": 0,
+        "b_edge_count": 0,
+        "success": 1
+    },
+    {
+        "date": "2023-05-06 00:00:00",
+        "r_fighter": "Jessica Andrade",
+        "b_fighter": "Yan Xiaonan",
+        "r_edge_count": 7,
+        "b_edge_count": 5,
+        "success": 1
+    },
+    {
+        "date": "2023-05-06 00:00:00",
+        "r_fighter": "Virna Jandiroba",
+        "b_fighter": "Marina Rodriguez",
+        "r_edge_count": 3,
+        "b_edge_count": 3,
+        "success": 0
+    },
+    {
+        "date": "2023-05-20 00:00:00",
+        "r_fighter": "Mackenzie Dern",
+        "b_fighter": "Angela Hill",
+        "r_edge_count": 4,
+        "b_edge_count": 16,
+        "success": 1
+    },
+    {
+        "date": "2023-05-20 00:00:00",
+        "r_fighter": "Karolina Kowalkiewicz",
+        "b_fighter": "Vanessa Demopoulos",
+        "r_edge_count": 10,
+        "b_edge_count": 0,
+        "success": 0
+    },
+    {
+        "date": "2023-06-03 00:00:00",
+        "r_fighter": "Elise Reed",
+        "b_fighter": "Jinh Yu Frey",
+        "r_edge_count": 0,
+        "b_edge_count": 1,
+        "success": 1
+    },
+    {
+        "date": "2023-06-10 00:00:00",
+        "r_fighter": "Maria Oliveira",
+        "b_fighter": "Diana Belbita",
+        "r_edge_count": 0,
+        "b_edge_count": 0,
+        "success": 1
+    },
+    {
+        "date": "2023-06-24 00:00:00",
+        "r_fighter": "Gillian Robertson",
+        "b_fighter": "Tabatha Ricci",
+        "r_edge_count": 0,
+        "b_edge_count": 0,
+        "success": 1
+    },
+    {
+        "date": "2023-07-08 00:00:00",
+        "r_fighter": "Yazmin Jauregui",
+        "b_fighter": "Denise Gomes",
+        "r_edge_count": 0,
+        "b_edge_count": 0,
+        "success": 1
+    },
+    {
+        "date": "2023-07-15 00:00:00",
+        "r_fighter": "Istela Nunes",
+        "b_fighter": "Viktoriia Dudakova",
+        "r_edge_count": 0,
+        "b_edge_count": 0,
+        "success": 1
+    },
+    {
+        "date": "2023-07-22 00:00:00",
+        "r_fighter": "Shauna Bannon",
+        "b_fighter": "Bruna Brasil",
+        "r_edge_count": 0,
+        "b_edge_count": 0,
+        "success": 1
+    },
+    {
+        "date": "2023-08-05 00:00:00",
+        "r_fighter": "Jessica Andrade",
+        "b_fighter": "Tatiana Suarez",
+        "r_edge_count": 7,
+        "b_edge_count": 4,
+        "success": 1
+    },
+    {
+        "date": "2023-08-12 00:00:00",
+        "r_fighter": "Iasmin Lucindo",
+        "b_fighter": "Polyana Viana",
+        "r_edge_count": 0,
+        "b_edge_count": 4,
+        "success": 1
+    },
+    {
+        "date": "2023-08-12 00:00:00",
+        "r_fighter": "Montserrat Conejo Ruiz",
+        "b_fighter": "Jaqueline Amorim",
+        "r_edge_count": 0,
+        "b_edge_count": 0,
+        "success": 1
+    },
+    {
+        "date": "2023-09-16 00:00:00",
+        "r_fighter": "Loopy Godinez",
+        "b_fighter": "Elise Reed",
+        "r_edge_count": 0,
+        "b_edge_count": 0,
+        "success": 0
+    },
+    {
+        "date": "2023-09-16 00:00:00",
+        "r_fighter": "Josefine Knutsson",
+        "b_fighter": "Marnic Mann",
+        "r_edge_count": 0,
+        "b_edge_count": 0,
+        "success": 0
+    },
+    {
+        "date": "2023-09-23 00:00:00",
+        "r_fighter": "Mizuki",
+        "b_fighter": "Hannah Goldy",
+        "r_edge_count": 1,
+        "b_edge_count": 0,
+        "success": 0
+    },
+    {
+        "date": "2023-09-23 00:00:00",
+        "r_fighter": "Michelle Waterson-Gomez",
+        "b_fighter": "Marina Rodriguez",
+        "r_edge_count": 10,
+        "b_edge_count": 3,
+        "success": 1
+    },
+    {
+        "date": "2023-10-07 00:00:00",
+        "r_fighter": "Karolina Kowalkiewicz",
+        "b_fighter": "Diana Belbita",
+        "r_edge_count": 10,
+        "b_edge_count": 0,
+        "success": 0
+    },
+    {
+        "date": "2023-10-07 00:00:00",
+        "r_fighter": "Vanessa Demopoulos",
+        "b_fighter": "Kanako Murata",
+        "r_edge_count": 0,
+        "b_edge_count": 0,
+        "success": 1
+    },
+    {
+        "date": "2023-10-14 00:00:00",
+        "r_fighter": "Emily Ducote",
+        "b_fighter": "Ashley Yoder",
+        "r_edge_count": 0,
+        "b_edge_count": 7,
+        "success": 1
+    },
+    {
+        "date": "2023-10-21 00:00:00",
+        "r_fighter": "Jinh Yu Frey",
+        "b_fighter": "Viktoriia Dudakova",
+        "r_edge_count": 1,
+        "b_edge_count": 0,
+        "success": 1
+    },
+    {
+        "date": "2023-11-04 00:00:00",
+        "r_fighter": "Denise Gomes",
+        "b_fighter": "Angela Hill",
+        "r_edge_count": 0,
+        "b_edge_count": 16,
+        "success": 0
+    },
+    {
+        "date": "2023-11-04 00:00:00",
+        "r_fighter": "Montserrat Conejo Ruiz",
+        "b_fighter": "Eduarda Moura",
+        "r_edge_count": 0,
+        "b_edge_count": 0,
+        "success": 1
+    },
+    {
+        "date": "2023-11-11 00:00:00",
+        "r_fighter": "Loopy Godinez",
+        "b_fighter": "Tabatha Ricci",
+        "r_edge_count": 0,
+        "b_edge_count": 0,
+        "success": 0
+    },
+    {
+        "date": "2023-11-11 00:00:00",
+        "r_fighter": "Jessica Andrade",
+        "b_fighter": "Mackenzie Dern",
+        "r_edge_count": 7,
+        "b_edge_count": 4,
+        "success": 0
+    },
+    {
+        "date": "2023-11-18 00:00:00",
+        "r_fighter": "Amanda Ribas",
+        "b_fighter": "Luana Pinheiro",
+        "r_edge_count": 3,
+        "b_edge_count": 0,
+        "success": 0
+    },
+    {
+        "date": "2023-12-09 00:00:00",
+        "r_fighter": "Talita Alencar",
+        "b_fighter": "Rayanne Amanda",
+        "r_edge_count": 0,
+        "b_edge_count": 0,
+        "success": 0
+    },
+    {
+        "date": "2024-01-20 00:00:00",
+        "r_fighter": "Polyana Viana",
+        "b_fighter": "Gillian Robertson",
+        "r_edge_count": 4,
+        "b_edge_count": 0,
+        "success": 1
+    },
+    {
+        "date": "2024-02-03 00:00:00",
+        "r_fighter": "Diana Belbita",
+        "b_fighter": "Molly McCann",
+        "r_edge_count": 0,
+        "b_edge_count": 0,
+        "success": 0
+    },
+    {
+        "date": "2024-02-10 00:00:00",
+        "r_fighter": "Loma Lookboonmee",
+        "b_fighter": "Bruna Brasil",
+        "r_edge_count": 2,
+        "b_edge_count": 0,
+        "success": 0
+    },
+    {
+        "date": "2024-02-17 00:00:00",
+        "r_fighter": "Amanda Lemos",
+        "b_fighter": "Mackenzie Dern",
+        "r_edge_count": 2,
+        "b_edge_count": 4,
+        "success": 1
+    },
+    {
+        "date": "2024-02-24 00:00:00",
+        "r_fighter": "Yazmin Jauregui",
+        "b_fighter": "Sam Hughes",
+        "r_edge_count": 0,
+        "b_edge_count": 0,
+        "success": 0
+    },
+    {
+        "date": "2024-03-16 00:00:00",
+        "r_fighter": "Jaqueline Amorim",
+        "b_fighter": "Cory McKenna",
+        "r_edge_count": 0,
+        "b_edge_count": 0,
+        "success": 0
+    }
+]
