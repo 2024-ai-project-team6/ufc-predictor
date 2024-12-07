@@ -3,12 +3,20 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # Load the CSV file
-file_path = './체급별_결과.csv'
+file_path = './Lightweight_results.csv'
 data = pd.read_csv(file_path)
 
 # Ensure numeric columns are properly converted
 for column in data.columns:
     data[column] = pd.to_numeric(data[column], errors='ignore')
+
+# Combine Red and Blue previous fights into one column (keep this separate as per requirement)
+previous_fights_red = pd.to_numeric(data['r_wins_total'], errors='coerce') + pd.to_numeric(data['r_losses_total'], errors='coerce')
+previous_fights_blue = pd.to_numeric(data['b_wins_total'], errors='coerce') + pd.to_numeric(data['b_losses_total'], errors='coerce')
+data_combined = pd.DataFrame({
+    'previous_fights': pd.concat([previous_fights_red, previous_fights_blue], ignore_index=True),
+    'success': pd.concat([data['success'], data['success']], ignore_index=True)
+})
 
 # Combine `r_` and `b_` columns into unified columns
 columns_to_combine = [col[2:] for col in data.columns if col.startswith('r_')]
@@ -19,8 +27,8 @@ for col in columns_to_combine:
     b_col = f"b_{col}"
     combined_data[col] = pd.concat([data[r_col], data[b_col]], ignore_index=True)
 
-# Add success column (duplicated for red and blue)
 combined_data['success'] = pd.concat([data['success'], data['success']], ignore_index=True)
+
 
 # Function to visualize success rate by multiple attributes
 def visualize_success_rate(data, success_col):
@@ -44,7 +52,6 @@ def visualize_success_rate(data, success_col):
     plt.figure(figsize=(15, len(integer_columns) * 6))
     for idx, column in enumerate(integer_columns, 1):
         values = data[column].dropna()
-        column_name = column  # Column name without modification
         unique_values = sorted(values.unique())
         if len(unique_values) <= 4:
             bins = unique_values + [unique_values[-1] + 1]
@@ -60,8 +67,8 @@ def visualize_success_rate(data, success_col):
         # Plot bar chart
         plt.subplot(len(integer_columns), 1, idx)
         plt.bar(range(len(success_rate)), success_rate, tick_label=[f"{bins[i]}-{bins[i + 1]}" for i in range(len(bins) - 1)])
-        plt.title(f"Success Rate by {column_name} (Integer)")
-        plt.xlabel(f"{column_name} Ranges")
+        plt.title(f"Success Rate by {column} (Integer)")
+        plt.xlabel(f"{column} Ranges")
         plt.ylabel("Success Rate")
         plt.xticks(rotation=45)
     plt.tight_layout()
@@ -71,7 +78,6 @@ def visualize_success_rate(data, success_col):
     plt.figure(figsize=(15, len(float_columns) * 6))
     for idx, column in enumerate(float_columns, 1):
         values = data[column].dropna()
-        column_name = column  # Column name without modification
         bins = np.linspace(values.min(), values.max(), 7)
 
         # Calculate success rate per bin, ignoring empty bins
@@ -86,12 +92,16 @@ def visualize_success_rate(data, success_col):
         # Plot line graph
         plt.subplot(len(float_columns), 1, idx)
         plt.plot(range(len(success_rate)), success_rate, marker='o')
-        plt.title(f"Success Rate by {column_name} (Float)")
-        plt.xlabel(f"{column_name} Ranges")
+        plt.title(f"Success Rate by {column} (Float)")
+        plt.xlabel(f"{column} Ranges")
         plt.ylabel("Success Rate")
         plt.xticks(range(len(success_rate)), bin_labels, rotation=45)
     plt.tight_layout()
     plt.show()
 
-# Visualize success rates for combined data
+
+# Visualize original attributes (combined columns)
 visualize_success_rate(combined_data, 'success')
+
+# Visualize previous_fights separately
+visualize_previous_fights(data_combined, 'success', 'previous_fights')
