@@ -1,0 +1,1454 @@
+[
+    {
+        "date": "2020-06-13 00:00:00",
+        "r_fighter": "Charles Rosa",
+        "b_fighter": "Kevin Aguilar",
+        "success": 1
+    },
+    {
+        "date": "2020-06-20 00:00:00",
+        "r_fighter": "Frank Camacho",
+        "b_fighter": "Justin Jaynes",
+        "success": 0
+    },
+    {
+        "date": "2020-06-20 00:00:00",
+        "r_fighter": "Clay Guida",
+        "b_fighter": "Bobby Green",
+        "success": 0
+    },
+    {
+        "date": "2020-06-20 00:00:00",
+        "r_fighter": "Max Rohskopf",
+        "b_fighter": "Austin Hubbard",
+        "success": 1
+    },
+    {
+        "date": "2020-06-27 00:00:00",
+        "r_fighter": "Dan Hooker",
+        "b_fighter": "Dustin Poirier",
+        "success": 0
+    },
+    {
+        "date": "2020-06-27 00:00:00",
+        "r_fighter": "Khama Worthy",
+        "b_fighter": "Luis Pena",
+        "success": 0
+    },
+    {
+        "date": "2020-07-11 00:00:00",
+        "r_fighter": "Roman Bogatov",
+        "b_fighter": "Leonardo Santos",
+        "success": 1
+    },
+    {
+        "date": "2020-07-18 00:00:00",
+        "r_fighter": "Marc Diakiese",
+        "b_fighter": "Rafael Fiziev",
+        "success": 0
+    },
+    {
+        "date": "2020-07-18 00:00:00",
+        "r_fighter": "Joel Alvarez",
+        "b_fighter": "Joe Duffy",
+        "success": 1
+    },
+    {
+        "date": "2020-07-18 00:00:00",
+        "r_fighter": "Davi Ramos",
+        "b_fighter": "Arman Tsarukyan",
+        "success": 1
+    },
+    {
+        "date": "2020-07-25 00:00:00",
+        "r_fighter": "Jai Herbert",
+        "b_fighter": "Francisco Trinaldo",
+        "success": 0
+    },
+    {
+        "date": "2020-08-01 00:00:00",
+        "r_fighter": "Lando Vannata",
+        "b_fighter": "Bobby Green",
+        "success": 1
+    },
+    {
+        "date": "2020-08-08 00:00:00",
+        "r_fighter": "Scott Holtzman",
+        "b_fighter": "Beneil Dariush",
+        "success": 1
+    },
+    {
+        "date": "2020-08-08 00:00:00",
+        "r_fighter": "Alexander Munoz",
+        "b_fighter": "Nasrat Haqparast",
+        "success": 1
+    },
+    {
+        "date": "2020-08-15 00:00:00",
+        "r_fighter": "Vinc Pichel",
+        "b_fighter": "Jim Miller",
+        "success": 0
+    },
+    {
+        "date": "2020-08-22 00:00:00",
+        "r_fighter": "Joe Solecki",
+        "b_fighter": "Austin Hubbard",
+        "success": 1
+    },
+    {
+        "date": "2020-09-12 00:00:00",
+        "r_fighter": "Khama Worthy",
+        "b_fighter": "Ottman Azaitar",
+        "success": 1
+    },
+    {
+        "date": "2020-09-12 00:00:00",
+        "r_fighter": "Alan Patrick",
+        "b_fighter": "Bobby Green",
+        "success": 1
+    },
+    {
+        "date": "2020-09-26 00:00:00",
+        "r_fighter": "Alex Da Silva",
+        "b_fighter": "Brad Riddell",
+        "success": 1
+    },
+    {
+        "date": "2020-10-03 00:00:00",
+        "r_fighter": "Jessin Ayari",
+        "b_fighter": "Luigi Vendramini",
+        "success": 1
+    },
+    {
+        "date": "2020-10-17 00:00:00",
+        "r_fighter": "Fares Ziam",
+        "b_fighter": "Jamie Mullarkey",
+        "success": 1
+    },
+    {
+        "date": "2020-10-17 00:00:00",
+        "r_fighter": "Guram Kutateladze",
+        "b_fighter": "Mateusz Gamrot",
+        "success": 1
+    },
+    {
+        "date": "2020-10-24 00:00:00",
+        "r_fighter": "Alexander Yakovlev",
+        "b_fighter": "Joel Alvarez",
+        "success": 1
+    },
+    {
+        "date": "2020-10-31 00:00:00",
+        "r_fighter": "Bobby Green",
+        "b_fighter": "Thiago Moises",
+        "success": 0
+    },
+    {
+        "date": "2020-10-31 00:00:00",
+        "r_fighter": "Chris Gruetzemacher",
+        "b_fighter": "Alexander Hernandez",
+        "success": 0
+    },
+    {
+        "date": "2020-11-14 00:00:00",
+        "r_fighter": "Rafael Dos Anjos",
+        "b_fighter": "Paul Felder",
+        "success": 1
+    },
+    {
+        "date": "2020-12-05 00:00:00",
+        "r_fighter": "Gabriel Benitez",
+        "b_fighter": "Justin Jaynes",
+        "success": 1
+    },
+    {
+        "date": "2020-12-05 00:00:00",
+        "r_fighter": "Matt Wiman",
+        "b_fighter": "Jordan Leavitt",
+        "success": 1
+    },
+    {
+        "date": "2020-12-12 00:00:00",
+        "r_fighter": "Charles Oliveira",
+        "b_fighter": "Tony Ferguson",
+        "success": 0
+    },
+    {
+        "date": "2020-12-12 00:00:00",
+        "r_fighter": "Rafael Fiziev",
+        "b_fighter": "Renato Moicano",
+        "success": 1
+    },
+    {
+        "date": "2021-01-20 00:00:00",
+        "r_fighter": "Mason Jones",
+        "b_fighter": "Mike Davis",
+        "success": 1
+    },
+    {
+        "date": "2021-01-23 00:00:00",
+        "r_fighter": "Dustin Poirier",
+        "b_fighter": "Conor McGregor",
+        "success": 1
+    },
+    {
+        "date": "2021-01-23 00:00:00",
+        "r_fighter": "Arman Tsarukyan",
+        "b_fighter": "Matt Frevola",
+        "success": 1
+    },
+    {
+        "date": "2021-01-23 00:00:00",
+        "r_fighter": "Michael Chandler",
+        "b_fighter": "Dan Hooker",
+        "success": 1
+    },
+    {
+        "date": "2021-02-06 00:00:00",
+        "r_fighter": "Clay Guida",
+        "b_fighter": "Michael Johnson",
+        "success": 1
+    },
+    {
+        "date": "2021-02-06 00:00:00",
+        "r_fighter": "Beneil Dariush",
+        "b_fighter": "Diego Ferreira",
+        "success": 1
+    },
+    {
+        "date": "2021-02-27 00:00:00",
+        "r_fighter": "Alexander Hernandez",
+        "b_fighter": "Thiago Moises",
+        "success": 0
+    },
+    {
+        "date": "2021-03-06 00:00:00",
+        "r_fighter": "Islam Makhachev",
+        "b_fighter": "Drew Dober",
+        "success": 1
+    },
+    {
+        "date": "2021-03-06 00:00:00",
+        "r_fighter": "Aalon Cruz",
+        "b_fighter": "Uros Medic",
+        "success": 1
+    },
+    {
+        "date": "2021-03-13 00:00:00",
+        "r_fighter": "Rafa Garcia",
+        "b_fighter": "Nasrat Haqparast",
+        "success": 1
+    },
+    {
+        "date": "2021-03-20 00:00:00",
+        "r_fighter": "Leonardo Santos",
+        "b_fighter": "Grant Dawson",
+        "success": 0
+    },
+    {
+        "date": "2021-03-27 00:00:00",
+        "r_fighter": "Khama Worthy",
+        "b_fighter": "Jamie Mullarkey",
+        "success": 1
+    },
+    {
+        "date": "2021-04-10 00:00:00",
+        "r_fighter": "Joe Solecki",
+        "b_fighter": "Jim Miller",
+        "success": 1
+    },
+    {
+        "date": "2021-04-10 00:00:00",
+        "r_fighter": "Mateusz Gamrot",
+        "b_fighter": "Scott Holtzman",
+        "success": 1
+    },
+    {
+        "date": "2021-04-10 00:00:00",
+        "r_fighter": "John Makdessi",
+        "b_fighter": "Ignacio Bahamondes",
+        "success": 1
+    },
+    {
+        "date": "2021-04-17 00:00:00",
+        "r_fighter": "Alexander Munoz",
+        "b_fighter": "Luis Pena",
+        "success": 0
+    },
+    {
+        "date": "2021-04-17 00:00:00",
+        "r_fighter": "Dakota Bush",
+        "b_fighter": "Austin Hubbard",
+        "success": 1
+    },
+    {
+        "date": "2021-04-24 00:00:00",
+        "r_fighter": "Kazula Vargas",
+        "b_fighter": "Rongzhu",
+        "success": 0
+    },
+    {
+        "date": "2021-05-08 00:00:00",
+        "r_fighter": "Gregor Gillespie",
+        "b_fighter": "Diego Ferreira",
+        "success": 0
+    },
+    {
+        "date": "2021-05-15 00:00:00",
+        "r_fighter": "Christos Giagos",
+        "b_fighter": "Sean Soriano",
+        "success": 1
+    },
+    {
+        "date": "2021-05-15 00:00:00",
+        "r_fighter": "Beneil Dariush",
+        "b_fighter": "Tony Ferguson",
+        "success": 1
+    },
+    {
+        "date": "2021-05-22 00:00:00",
+        "r_fighter": "Damir Ismagulov",
+        "b_fighter": "Rafael Alves",
+        "success": 1
+    },
+    {
+        "date": "2021-06-05 00:00:00",
+        "r_fighter": "Claudio Puelles",
+        "b_fighter": "Jordan Leavitt",
+        "success": 1
+    },
+    {
+        "date": "2021-06-12 00:00:00",
+        "r_fighter": "Drew Dober",
+        "b_fighter": "Brad Riddell",
+        "success": 0
+    },
+    {
+        "date": "2021-06-12 00:00:00",
+        "r_fighter": "Matt Frevola",
+        "b_fighter": "Terrance McKinney",
+        "success": 0
+    },
+    {
+        "date": "2021-06-12 00:00:00",
+        "r_fighter": "Fares Ziam",
+        "b_fighter": "Luigi Vendramini",
+        "success": 1
+    },
+    {
+        "date": "2021-06-19 00:00:00",
+        "r_fighter": "Joaquim Silva",
+        "b_fighter": "Ricky Glenn",
+        "success": 0
+    },
+    {
+        "date": "2021-06-26 00:00:00",
+        "r_fighter": "Renato Moicano",
+        "b_fighter": "Jai Herbert",
+        "success": 1
+    },
+    {
+        "date": "2021-06-26 00:00:00",
+        "r_fighter": "Damir Hadzovic",
+        "b_fighter": "Yancy Medeiros",
+        "success": 1
+    },
+    {
+        "date": "2021-07-10 00:00:00",
+        "r_fighter": "Conor McGregor",
+        "b_fighter": "Dustin Poirier",
+        "success": 1
+    },
+    {
+        "date": "2021-07-17 00:00:00",
+        "r_fighter": "Mateusz Gamrot",
+        "b_fighter": "Jeremy Stephens",
+        "success": 1
+    },
+    {
+        "date": "2021-07-17 00:00:00",
+        "r_fighter": "Islam Makhachev",
+        "b_fighter": "Thiago Moises",
+        "success": 1
+    },
+    {
+        "date": "2021-07-31 00:00:00",
+        "r_fighter": "Rafa Garcia",
+        "b_fighter": "Chris Gruetzemacher",
+        "success": 0
+    },
+    {
+        "date": "2021-08-07 00:00:00",
+        "r_fighter": "Rafael Fiziev",
+        "b_fighter": "Bobby Green",
+        "success": 1
+    },
+    {
+        "date": "2021-08-21 00:00:00",
+        "r_fighter": "Mark Madsen",
+        "b_fighter": "Clay Guida",
+        "success": 0
+    },
+    {
+        "date": "2021-08-21 00:00:00",
+        "r_fighter": "Austin Hubbard",
+        "b_fighter": "Vinc Pichel",
+        "success": 0
+    },
+    {
+        "date": "2021-08-21 00:00:00",
+        "r_fighter": "Ignacio Bahamondes",
+        "b_fighter": "Roosevelt Roberts",
+        "success": 1
+    },
+    {
+        "date": "2021-09-04 00:00:00",
+        "r_fighter": "Luigi Vendramini",
+        "b_fighter": "Paddy Pimblett",
+        "success": 0
+    },
+    {
+        "date": "2021-09-18 00:00:00",
+        "r_fighter": "Christos Giagos",
+        "b_fighter": "Arman Tsarukyan",
+        "success": 1
+    },
+    {
+        "date": "2021-09-18 00:00:00",
+        "r_fighter": "Brandon Jenkins",
+        "b_fighter": "Rongzhu",
+        "success": 1
+    },
+    {
+        "date": "2021-09-25 00:00:00",
+        "r_fighter": "Dan Hooker",
+        "b_fighter": "Nasrat Haqparast",
+        "success": 1
+    },
+    {
+        "date": "2021-09-25 00:00:00",
+        "r_fighter": "Jalin Turner",
+        "b_fighter": "Uros Medic",
+        "success": 1
+    },
+    {
+        "date": "2021-10-02 00:00:00",
+        "r_fighter": "Joe Solecki",
+        "b_fighter": "Jared Gordon",
+        "success": 0
+    },
+    {
+        "date": "2021-10-02 00:00:00",
+        "r_fighter": "Mike Breeden",
+        "b_fighter": "Alexander Hernandez",
+        "success": 0
+    },
+    {
+        "date": "2021-10-02 00:00:00",
+        "r_fighter": "Jamie Mullarkey",
+        "b_fighter": "Devonte Smith",
+        "success": 1
+    },
+    {
+        "date": "2021-10-09 00:00:00",
+        "r_fighter": "Charlie Ontiveros",
+        "b_fighter": "Steve Garcia",
+        "success": 0
+    },
+    {
+        "date": "2021-10-16 00:00:00",
+        "r_fighter": "Erick Gonzalez",
+        "b_fighter": "Jim Miller",
+        "success": 1
+    },
+    {
+        "date": "2021-10-23 00:00:00",
+        "r_fighter": "Mason Jones",
+        "b_fighter": "David Onama",
+        "success": 1
+    },
+    {
+        "date": "2021-10-23 00:00:00",
+        "r_fighter": "Khama Worthy",
+        "b_fighter": "Jai Herbert",
+        "success": 1
+    },
+    {
+        "date": "2021-10-30 00:00:00",
+        "r_fighter": "Dan Hooker",
+        "b_fighter": "Islam Makhachev",
+        "success": 0
+    },
+    {
+        "date": "2021-11-06 00:00:00",
+        "r_fighter": "Bobby Green",
+        "b_fighter": "Al Iaquinta",
+        "success": 1
+    },
+    {
+        "date": "2021-11-06 00:00:00",
+        "r_fighter": "Michael Chandler",
+        "b_fighter": "Justin Gaethje",
+        "success": 1
+    },
+    {
+        "date": "2021-11-13 00:00:00",
+        "r_fighter": "Thiago Moises",
+        "b_fighter": "Joel Alvarez",
+        "success": 0
+    },
+    {
+        "date": "2021-11-13 00:00:00",
+        "r_fighter": "Rafael Alves",
+        "b_fighter": "Marc Diakiese",
+        "success": 1
+    },
+    {
+        "date": "2021-11-20 00:00:00",
+        "r_fighter": "Rafa Garcia",
+        "b_fighter": "Natan Levy",
+        "success": 0
+    },
+    {
+        "date": "2021-12-04 00:00:00",
+        "r_fighter": "Rafael Fiziev",
+        "b_fighter": "Brad Riddell",
+        "success": 1
+    },
+    {
+        "date": "2021-12-04 00:00:00",
+        "r_fighter": "Leonardo Santos",
+        "b_fighter": "Clay Guida",
+        "success": 1
+    },
+    {
+        "date": "2021-12-04 00:00:00",
+        "r_fighter": "Claudio Puelles",
+        "b_fighter": "Chris Gruetzemacher",
+        "success": 1
+    },
+    {
+        "date": "2021-12-18 00:00:00",
+        "r_fighter": "Diego Ferreira",
+        "b_fighter": "Mateusz Gamrot",
+        "success": 0
+    },
+    {
+        "date": "2021-12-18 00:00:00",
+        "r_fighter": "Matt Sayles",
+        "b_fighter": "Jordan Leavitt",
+        "success": 1
+    },
+    {
+        "date": "2022-01-15 00:00:00",
+        "r_fighter": "TJ Brown",
+        "b_fighter": "Charles Rosa",
+        "success": 1
+    },
+    {
+        "date": "2022-01-15 00:00:00",
+        "r_fighter": "Dakota Bush",
+        "b_fighter": "Viacheslav Borshchev",
+        "success": 1
+    },
+    {
+        "date": "2022-01-22 00:00:00",
+        "r_fighter": "Genaro Valdez",
+        "b_fighter": "Matt Frevola",
+        "success": 1
+    },
+    {
+        "date": "2022-02-12 00:00:00",
+        "r_fighter": "Nasrat Haqparast",
+        "b_fighter": "Bobby Green",
+        "success": 1
+    },
+    {
+        "date": "2022-02-12 00:00:00",
+        "r_fighter": "Alexander Hernandez",
+        "b_fighter": "Renato Moicano",
+        "success": 0
+    },
+    {
+        "date": "2022-02-19 00:00:00",
+        "r_fighter": "Nikolas Motta",
+        "b_fighter": "Jim Miller",
+        "success": 0
+    },
+    {
+        "date": "2022-02-26 00:00:00",
+        "r_fighter": "Joel Alvarez",
+        "b_fighter": "Arman Tsarukyan",
+        "success": 0
+    },
+    {
+        "date": "2022-02-26 00:00:00",
+        "r_fighter": "Terrance McKinney",
+        "b_fighter": "Fares Ziam",
+        "success": 1
+    },
+    {
+        "date": "2022-02-26 00:00:00",
+        "r_fighter": "Ignacio Bahamondes",
+        "b_fighter": "Rongzhu",
+        "success": 1
+    },
+    {
+        "date": "2022-03-05 00:00:00",
+        "r_fighter": "Ludovit Klein",
+        "b_fighter": "Devonte Smith",
+        "success": 1
+    },
+    {
+        "date": "2022-03-05 00:00:00",
+        "r_fighter": "Jamie Mullarkey",
+        "b_fighter": "Jalin Turner",
+        "success": 0
+    },
+    {
+        "date": "2022-03-12 00:00:00",
+        "r_fighter": "Terrance McKinney",
+        "b_fighter": "Drew Dober",
+        "success": 0
+    },
+    {
+        "date": "2022-03-19 00:00:00",
+        "r_fighter": "Jai Herbert",
+        "b_fighter": "Ilia Topuria",
+        "success": 0
+    },
+    {
+        "date": "2022-03-19 00:00:00",
+        "r_fighter": "Kazula Vargas",
+        "b_fighter": "Paddy Pimblett",
+        "success": 1
+    },
+    {
+        "date": "2022-03-26 00:00:00",
+        "r_fighter": "Marc Diakiese",
+        "b_fighter": "Viacheslav Borshchev",
+        "success": 1
+    },
+    {
+        "date": "2022-04-09 00:00:00",
+        "r_fighter": "Vinc Pichel",
+        "b_fighter": "Mark Madsen",
+        "success": 0
+    },
+    {
+        "date": "2022-04-16 00:00:00",
+        "r_fighter": "Drakkar Klose",
+        "b_fighter": "Brandon Jenkins",
+        "success": 1
+    },
+    {
+        "date": "2022-04-16 00:00:00",
+        "r_fighter": "Jesse Ronson",
+        "b_fighter": "Rafa Garcia",
+        "success": 0
+    },
+    {
+        "date": "2022-04-16 00:00:00",
+        "r_fighter": "Jordan Leavitt",
+        "b_fighter": "Trey Ogden",
+        "success": 1
+    },
+    {
+        "date": "2022-04-23 00:00:00",
+        "r_fighter": "Claudio Puelles",
+        "b_fighter": "Clay Guida",
+        "success": 1
+    },
+    {
+        "date": "2022-04-30 00:00:00",
+        "r_fighter": "Jared Gordon",
+        "b_fighter": "Grant Dawson",
+        "success": 0
+    },
+    {
+        "date": "2022-04-30 00:00:00",
+        "r_fighter": "Mike Breeden",
+        "b_fighter": "Natan Levy",
+        "success": 0
+    },
+    {
+        "date": "2022-05-07 00:00:00",
+        "r_fighter": "Michael Chandler",
+        "b_fighter": "Tony Ferguson",
+        "success": 0
+    },
+    {
+        "date": "2022-05-07 00:00:00",
+        "r_fighter": "Justin Gaethje",
+        "b_fighter": "Charles Oliveira",
+        "success": 0
+    },
+    {
+        "date": "2022-05-14 00:00:00",
+        "r_fighter": "Frank Camacho",
+        "b_fighter": "Manuel Torres",
+        "success": 0
+    },
+    {
+        "date": "2022-05-14 00:00:00",
+        "r_fighter": "Alan Patrick",
+        "b_fighter": "Michael Johnson",
+        "success": 1
+    },
+    {
+        "date": "2022-05-21 00:00:00",
+        "r_fighter": "Uros Medic",
+        "b_fighter": "Omar Morales",
+        "success": 1
+    },
+    {
+        "date": "2022-06-04 00:00:00",
+        "r_fighter": "Niklas Stolze",
+        "b_fighter": "Benoit Saint Denis",
+        "success": 1
+    },
+    {
+        "date": "2022-06-04 00:00:00",
+        "r_fighter": "Alex Da Silva",
+        "b_fighter": "Joe Solecki",
+        "success": 1
+    },
+    {
+        "date": "2022-06-11 00:00:00",
+        "r_fighter": "Steve Garcia",
+        "b_fighter": "Maheshate",
+        "success": 0
+    },
+    {
+        "date": "2022-06-18 00:00:00",
+        "r_fighter": "Damir Ismagulov",
+        "b_fighter": "Guram Kutateladze",
+        "success": 0
+    },
+    {
+        "date": "2022-06-25 00:00:00",
+        "r_fighter": "Christos Giagos",
+        "b_fighter": "Thiago Moises",
+        "success": 1
+    },
+    {
+        "date": "2022-06-25 00:00:00",
+        "r_fighter": "Mateusz Gamrot",
+        "b_fighter": "Arman Tsarukyan",
+        "success": 1
+    },
+    {
+        "date": "2022-07-02 00:00:00",
+        "r_fighter": "Brad Riddell",
+        "b_fighter": "Jalin Turner",
+        "success": 0
+    },
+    {
+        "date": "2022-07-09 00:00:00",
+        "r_fighter": "Rafael Dos Anjos",
+        "b_fighter": "Rafael Fiziev",
+        "success": 1
+    },
+    {
+        "date": "2022-07-09 00:00:00",
+        "r_fighter": "Jamie Mullarkey",
+        "b_fighter": "Michael Johnson",
+        "success": 1
+    },
+    {
+        "date": "2022-07-23 00:00:00",
+        "r_fighter": "Mason Jones",
+        "b_fighter": "Ludovit Klein",
+        "success": 1
+    },
+    {
+        "date": "2022-07-23 00:00:00",
+        "r_fighter": "Damir Hadzovic",
+        "b_fighter": "Marc Diakiese",
+        "success": 1
+    },
+    {
+        "date": "2022-07-23 00:00:00",
+        "r_fighter": "Paddy Pimblett",
+        "b_fighter": "Jordan Leavitt",
+        "success": 0
+    },
+    {
+        "date": "2022-07-23 00:00:00",
+        "r_fighter": "Kyle Nelson",
+        "b_fighter": "Jai Herbert",
+        "success": 1
+    },
+    {
+        "date": "2022-07-30 00:00:00",
+        "r_fighter": "Rafael Alves",
+        "b_fighter": "Drew Dober",
+        "success": 0
+    },
+    {
+        "date": "2022-07-30 00:00:00",
+        "r_fighter": "Rafa Garcia",
+        "b_fighter": "Drakkar Klose",
+        "success": 0
+    },
+    {
+        "date": "2022-08-06 00:00:00",
+        "r_fighter": "Erick Gonzalez",
+        "b_fighter": "Terrance McKinney",
+        "success": 1
+    },
+    {
+        "date": "2022-08-13 00:00:00",
+        "r_fighter": "Gabriel Benitez",
+        "b_fighter": "Charlie Ontiveros",
+        "success": 1
+    },
+    {
+        "date": "2022-08-20 00:00:00",
+        "r_fighter": "Jared Gordon",
+        "b_fighter": "Leonardo Santos",
+        "success": 1
+    },
+    {
+        "date": "2022-09-03 00:00:00",
+        "r_fighter": "Fares Ziam",
+        "b_fighter": "Michal Figlak",
+        "success": 1
+    },
+    {
+        "date": "2022-09-03 00:00:00",
+        "r_fighter": "Gabriel Miranda",
+        "b_fighter": "Benoit Saint Denis",
+        "success": 1
+    },
+    {
+        "date": "2022-09-03 00:00:00",
+        "r_fighter": "Nasrat Haqparast",
+        "b_fighter": "John Makdessi",
+        "success": 1
+    },
+    {
+        "date": "2022-09-17 00:00:00",
+        "r_fighter": "Trey Ogden",
+        "b_fighter": "Daniel Zellhuber",
+        "success": 1
+    },
+    {
+        "date": "2022-09-17 00:00:00",
+        "r_fighter": "Cameron VanCamp",
+        "b_fighter": "Nikolas Motta",
+        "success": 1
+    },
+    {
+        "date": "2022-10-01 00:00:00",
+        "r_fighter": "Joaquim Silva",
+        "b_fighter": "Jesse Ronson",
+        "success": 1
+    },
+    {
+        "date": "2022-10-01 00:00:00",
+        "r_fighter": "Viacheslav Borshchev",
+        "b_fighter": "Mike Davis",
+        "success": 0
+    },
+    {
+        "date": "2022-10-22 00:00:00",
+        "r_fighter": "Mateusz Gamrot",
+        "b_fighter": "Beneil Dariush",
+        "success": 0
+    },
+    {
+        "date": "2022-11-05 00:00:00",
+        "r_fighter": "Grant Dawson",
+        "b_fighter": "Mark Madsen",
+        "success": 1
+    },
+    {
+        "date": "2022-11-12 00:00:00",
+        "r_fighter": "Matt Frevola",
+        "b_fighter": "Ottman Azaitar",
+        "success": 1
+    },
+    {
+        "date": "2022-11-12 00:00:00",
+        "r_fighter": "Dan Hooker",
+        "b_fighter": "Claudio Puelles",
+        "success": 1
+    },
+    {
+        "date": "2022-11-12 00:00:00",
+        "r_fighter": "Michael Chandler",
+        "b_fighter": "Dustin Poirier",
+        "success": 1
+    },
+    {
+        "date": "2022-11-12 00:00:00",
+        "r_fighter": "Brad Riddell",
+        "b_fighter": "Renato Moicano",
+        "success": 0
+    },
+    {
+        "date": "2022-12-03 00:00:00",
+        "r_fighter": "Scott Holtzman",
+        "b_fighter": "Clay Guida",
+        "success": 1
+    },
+    {
+        "date": "2022-12-03 00:00:00",
+        "r_fighter": "Michael Johnson",
+        "b_fighter": "Marc Diakiese",
+        "success": 1
+    },
+    {
+        "date": "2022-12-03 00:00:00",
+        "r_fighter": "Genaro Valdez",
+        "b_fighter": "Natan Levy",
+        "success": 0
+    },
+    {
+        "date": "2022-12-10 00:00:00",
+        "r_fighter": "Paddy Pimblett",
+        "b_fighter": "Jared Gordon",
+        "success": 1
+    },
+    {
+        "date": "2022-12-17 00:00:00",
+        "r_fighter": "Drew Dober",
+        "b_fighter": "Bobby Green",
+        "success": 1
+    },
+    {
+        "date": "2022-12-17 00:00:00",
+        "r_fighter": "Damir Ismagulov",
+        "b_fighter": "Arman Tsarukyan",
+        "success": 1
+    },
+    {
+        "date": "2022-12-17 00:00:00",
+        "r_fighter": "Rafa Garcia",
+        "b_fighter": "Maheshate",
+        "success": 1
+    },
+    {
+        "date": "2023-01-14 00:00:00",
+        "r_fighter": "Mateusz Rebecki",
+        "b_fighter": "Nick Fiore",
+        "success": 0
+    },
+    {
+        "date": "2023-01-21 00:00:00",
+        "r_fighter": "Ismael Bonfim",
+        "b_fighter": "Terrance McKinney",
+        "success": 0
+    },
+    {
+        "date": "2023-01-21 00:00:00",
+        "r_fighter": "Thiago Moises",
+        "b_fighter": "Melquizael Costa",
+        "success": 1
+    },
+    {
+        "date": "2023-02-04 00:00:00",
+        "r_fighter": "Jeka Saragih",
+        "b_fighter": "Anshul Jubli",
+        "success": 0
+    },
+    {
+        "date": "2023-02-11 00:00:00",
+        "r_fighter": "Jamie Mullarkey",
+        "b_fighter": "Francisco Prado",
+        "success": 1
+    },
+    {
+        "date": "2023-02-11 00:00:00",
+        "r_fighter": "Elves Brener",
+        "b_fighter": "Zubaira Tukhugov",
+        "success": 1
+    },
+    {
+        "date": "2023-02-18 00:00:00",
+        "r_fighter": "Jim Miller",
+        "b_fighter": "Alexander Hernandez",
+        "success": 0
+    },
+    {
+        "date": "2023-02-18 00:00:00",
+        "r_fighter": "Evan Elder",
+        "b_fighter": "Nazim Sadykhov",
+        "success": 1
+    },
+    {
+        "date": "2023-02-25 00:00:00",
+        "r_fighter": "Trevor Peek",
+        "b_fighter": "Erick Gonzalez",
+        "success": 1
+    },
+    {
+        "date": "2023-02-25 00:00:00",
+        "r_fighter": "Joe Solecki",
+        "b_fighter": "Carl Deaton",
+        "success": 1
+    },
+    {
+        "date": "2023-02-25 00:00:00",
+        "r_fighter": "Jordan Leavitt",
+        "b_fighter": "Victor Martinez",
+        "success": 1
+    },
+    {
+        "date": "2023-02-25 00:00:00",
+        "r_fighter": "Rafael Alves",
+        "b_fighter": "Nurullo Aliev",
+        "success": 0
+    },
+    {
+        "date": "2023-03-04 00:00:00",
+        "r_fighter": "Mateusz Gamrot",
+        "b_fighter": "Jalin Turner",
+        "success": 1
+    },
+    {
+        "date": "2023-03-04 00:00:00",
+        "r_fighter": "Esteban Ribovics",
+        "b_fighter": "Loik Radzhabov",
+        "success": 0
+    },
+    {
+        "date": "2023-03-18 00:00:00",
+        "r_fighter": "Justin Gaethje",
+        "b_fighter": "Rafael Fiziev",
+        "success": 1
+    },
+    {
+        "date": "2023-03-18 00:00:00",
+        "r_fighter": "Sam Patterson",
+        "b_fighter": "Yanal Ashmouz",
+        "success": 1
+    },
+    {
+        "date": "2023-03-18 00:00:00",
+        "r_fighter": "Chris Duncan",
+        "b_fighter": "Omar Morales",
+        "success": 1
+    },
+    {
+        "date": "2023-04-15 00:00:00",
+        "r_fighter": "Rafa Garcia",
+        "b_fighter": "Clay Guida",
+        "success": 0
+    },
+    {
+        "date": "2023-04-15 00:00:00",
+        "r_fighter": "Lando Vannata",
+        "b_fighter": "Daniel Zellhuber",
+        "success": 1
+    },
+    {
+        "date": "2023-04-22 00:00:00",
+        "r_fighter": "Ricky Glenn",
+        "b_fighter": "Christos Giagos",
+        "success": 0
+    },
+    {
+        "date": "2023-05-06 00:00:00",
+        "r_fighter": "Drew Dober",
+        "b_fighter": "Matt Frevola",
+        "success": 0
+    },
+    {
+        "date": "2023-05-20 00:00:00",
+        "r_fighter": "Diego Ferreira",
+        "b_fighter": "Michael Johnson",
+        "success": 1
+    },
+    {
+        "date": "2023-05-20 00:00:00",
+        "r_fighter": "Maheshate",
+        "b_fighter": "Viacheslav Borshchev",
+        "success": 0
+    },
+    {
+        "date": "2023-05-20 00:00:00",
+        "r_fighter": "Chase Hooper",
+        "b_fighter": "Nick Fiore",
+        "success": 0
+    },
+    {
+        "date": "2023-06-03 00:00:00",
+        "r_fighter": "Jesse Butler",
+        "b_fighter": "Jim Miller",
+        "success": 1
+    },
+    {
+        "date": "2023-06-03 00:00:00",
+        "r_fighter": "Jamie Mullarkey",
+        "b_fighter": "Muhammad Naimov",
+        "success": 0
+    },
+    {
+        "date": "2023-06-10 00:00:00",
+        "r_fighter": "Charles Oliveira",
+        "b_fighter": "Beneil Dariush",
+        "success": 0
+    },
+    {
+        "date": "2023-06-17 00:00:00",
+        "r_fighter": "Manuel Torres",
+        "b_fighter": "Nikolas Motta",
+        "success": 1
+    },
+    {
+        "date": "2023-06-17 00:00:00",
+        "r_fighter": "Arman Tsarukyan",
+        "b_fighter": "Joaquim Silva",
+        "success": 1
+    },
+    {
+        "date": "2023-06-24 00:00:00",
+        "r_fighter": "Chepe Mariscal",
+        "b_fighter": "Trevor Peek",
+        "success": 1
+    },
+    {
+        "date": "2023-06-24 00:00:00",
+        "r_fighter": "Mateusz Rebecki",
+        "b_fighter": "Loik Radzhabov",
+        "success": 0
+    },
+    {
+        "date": "2023-07-01 00:00:00",
+        "r_fighter": "Damir Ismagulov",
+        "b_fighter": "Grant Dawson",
+        "success": 1
+    },
+    {
+        "date": "2023-07-01 00:00:00",
+        "r_fighter": "Ismael Bonfim",
+        "b_fighter": "Benoit Saint Denis",
+        "success": 1
+    },
+    {
+        "date": "2023-07-01 00:00:00",
+        "r_fighter": "Elves Brener",
+        "b_fighter": "Guram Kutateladze",
+        "success": 0
+    },
+    {
+        "date": "2023-07-08 00:00:00",
+        "r_fighter": "Dan Hooker",
+        "b_fighter": "Jalin Turner",
+        "success": 1
+    },
+    {
+        "date": "2023-07-08 00:00:00",
+        "r_fighter": "Kamuela Kirk",
+        "b_fighter": "Esteban Ribovics",
+        "success": 0
+    },
+    {
+        "date": "2023-07-15 00:00:00",
+        "r_fighter": "Nazim Sadykhov",
+        "b_fighter": "Terrance McKinney",
+        "success": 0
+    },
+    {
+        "date": "2023-07-15 00:00:00",
+        "r_fighter": "Carl Deaton",
+        "b_fighter": "Alexander Munoz",
+        "success": 0
+    },
+    {
+        "date": "2023-07-15 00:00:00",
+        "r_fighter": "Francisco Prado",
+        "b_fighter": "Ottman Azaitar",
+        "success": 1
+    },
+    {
+        "date": "2023-07-15 00:00:00",
+        "r_fighter": "Evan Elder",
+        "b_fighter": "Genaro Valdez",
+        "success": 1
+    },
+    {
+        "date": "2023-07-22 00:00:00",
+        "r_fighter": "Jai Herbert",
+        "b_fighter": "Fares Ziam",
+        "success": 0
+    },
+    {
+        "date": "2023-07-22 00:00:00",
+        "r_fighter": "Marc Diakiese",
+        "b_fighter": "Joel Alvarez",
+        "success": 0
+    },
+    {
+        "date": "2023-07-22 00:00:00",
+        "r_fighter": "Yanal Ashmouz",
+        "b_fighter": "Chris Duncan",
+        "success": 0
+    },
+    {
+        "date": "2023-07-29 00:00:00",
+        "r_fighter": "Dustin Poirier",
+        "b_fighter": "Justin Gaethje",
+        "success": 0
+    },
+    {
+        "date": "2023-07-29 00:00:00",
+        "r_fighter": "Tony Ferguson",
+        "b_fighter": "Bobby Green",
+        "success": 0
+    },
+    {
+        "date": "2023-08-05 00:00:00",
+        "r_fighter": "Ludovit Klein",
+        "b_fighter": "Ignacio Bahamondes",
+        "success": 1
+    },
+    {
+        "date": "2023-08-12 00:00:00",
+        "r_fighter": "Mike Breeden",
+        "b_fighter": "Terrance McKinney",
+        "success": 1
+    },
+    {
+        "date": "2023-08-19 00:00:00",
+        "r_fighter": "Kurt Holobaugh",
+        "b_fighter": "Austin Hubbard",
+        "success": 0
+    },
+    {
+        "date": "2023-09-02 00:00:00",
+        "r_fighter": "Thiago Moises",
+        "b_fighter": "Benoit Saint Denis",
+        "success": 0
+    },
+    {
+        "date": "2023-09-09 00:00:00",
+        "r_fighter": "John Makdessi",
+        "b_fighter": "Jamie Mullarkey",
+        "success": 1
+    },
+    {
+        "date": "2023-09-09 00:00:00",
+        "r_fighter": "Nasrat Haqparast",
+        "b_fighter": "Landon Quinones",
+        "success": 1
+    },
+    {
+        "date": "2023-09-16 00:00:00",
+        "r_fighter": "Daniel Zellhuber",
+        "b_fighter": "Christos Giagos",
+        "success": 1
+    },
+    {
+        "date": "2023-09-16 00:00:00",
+        "r_fighter": "Charlie Campbell",
+        "b_fighter": "Alex Reyes",
+        "success": 1
+    },
+    {
+        "date": "2023-09-23 00:00:00",
+        "r_fighter": "Mateusz Gamrot",
+        "b_fighter": "Rafael Fiziev",
+        "success": 1
+    },
+    {
+        "date": "2023-10-07 00:00:00",
+        "r_fighter": "Bobby Green",
+        "b_fighter": "Grant Dawson",
+        "success": 1
+    },
+    {
+        "date": "2023-10-07 00:00:00",
+        "r_fighter": "Drew Dober",
+        "b_fighter": "Ricky Glenn",
+        "success": 1
+    },
+    {
+        "date": "2023-10-14 00:00:00",
+        "r_fighter": "Terrance McKinney",
+        "b_fighter": "Brendon Marotte",
+        "success": 1
+    },
+    {
+        "date": "2023-10-21 00:00:00",
+        "r_fighter": "Anshul Jubli",
+        "b_fighter": "Mike Breeden",
+        "success": 0
+    },
+    {
+        "date": "2023-10-21 00:00:00",
+        "r_fighter": "Trevor Peek",
+        "b_fighter": "Mohammad Yahya",
+        "success": 1
+    },
+    {
+        "date": "2023-11-04 00:00:00",
+        "r_fighter": "Kaue Fernandes",
+        "b_fighter": "Marc Diakiese",
+        "success": 1
+    },
+    {
+        "date": "2023-11-11 00:00:00",
+        "r_fighter": "Benoit Saint Denis",
+        "b_fighter": "Matt Frevola",
+        "success": 1
+    },
+    {
+        "date": "2023-11-11 00:00:00",
+        "r_fighter": "Roosevelt Roberts",
+        "b_fighter": "Mateusz Rebecki",
+        "success": 0
+    },
+    {
+        "date": "2023-11-11 00:00:00",
+        "r_fighter": "Mark Madsen",
+        "b_fighter": "Jared Gordon",
+        "success": 0
+    },
+    {
+        "date": "2023-11-18 00:00:00",
+        "r_fighter": "Chase Hooper",
+        "b_fighter": "Jordan Leavitt",
+        "success": 0
+    },
+    {
+        "date": "2023-12-02 00:00:00",
+        "r_fighter": "Drakkar Klose",
+        "b_fighter": "Joe Solecki",
+        "success": 0
+    },
+    {
+        "date": "2023-12-02 00:00:00",
+        "r_fighter": "Joaquim Silva",
+        "b_fighter": "Clay Guida",
+        "success": 0
+    },
+    {
+        "date": "2023-12-02 00:00:00",
+        "r_fighter": "Jalin Turner",
+        "b_fighter": "Bobby Green",
+        "success": 1
+    },
+    {
+        "date": "2023-12-02 00:00:00",
+        "r_fighter": "Arman Tsarukyan",
+        "b_fighter": "Beneil Dariush",
+        "success": 1
+    },
+    {
+        "date": "2023-12-09 00:00:00",
+        "r_fighter": "Nasrat Haqparast",
+        "b_fighter": "Jamie Mullarkey",
+        "success": 1
+    },
+    {
+        "date": "2023-12-09 00:00:00",
+        "r_fighter": "Steve Garcia",
+        "b_fighter": "Melquizael Costa",
+        "success": 1
+    },
+    {
+        "date": "2023-12-16 00:00:00",
+        "r_fighter": "Paddy Pimblett",
+        "b_fighter": "Tony Ferguson",
+        "success": 1
+    },
+    {
+        "date": "2024-01-13 00:00:00",
+        "r_fighter": "Jim Miller",
+        "b_fighter": "Gabriel Benitez",
+        "success": 1
+    },
+    {
+        "date": "2024-01-13 00:00:00",
+        "r_fighter": "Nikolas Motta",
+        "b_fighter": "Tom Nolan",
+        "success": 1
+    },
+    {
+        "date": "2024-02-03 00:00:00",
+        "r_fighter": "Renato Moicano",
+        "b_fighter": "Drew Dober",
+        "success": 1
+    },
+    {
+        "date": "2024-02-03 00:00:00",
+        "r_fighter": "MarQuel Mederos",
+        "b_fighter": "Landon Quinones",
+        "success": 0
+    },
+    {
+        "date": "2024-02-10 00:00:00",
+        "r_fighter": "Timmy Cuamba",
+        "b_fighter": "Bolaji Oki",
+        "success": 1
+    },
+    {
+        "date": "2024-02-10 00:00:00",
+        "r_fighter": "Michael Johnson",
+        "b_fighter": "Darrius Flowers",
+        "success": 1
+    },
+    {
+        "date": "2024-02-24 00:00:00",
+        "r_fighter": "Daniel Zellhuber",
+        "b_fighter": "Francisco Prado",
+        "success": 1
+    },
+    {
+        "date": "2024-02-24 00:00:00",
+        "r_fighter": "Manuel Torres",
+        "b_fighter": "Chris Duncan",
+        "success": 1
+    },
+    {
+        "date": "2024-02-24 00:00:00",
+        "r_fighter": "Fares Ziam",
+        "b_fighter": "Claudio Puelles",
+        "success": 1
+    },
+    {
+        "date": "2024-03-02 00:00:00",
+        "r_fighter": "Ludovit Klein",
+        "b_fighter": "AJ Cunningham",
+        "success": 1
+    },
+    {
+        "date": "2024-03-02 00:00:00",
+        "r_fighter": "Abdul-Kareem Al-Selwady",
+        "b_fighter": "Loik Radzhabov",
+        "success": 1
+    },
+    {
+        "date": "2024-03-09 00:00:00",
+        "r_fighter": "Dustin Poirier",
+        "b_fighter": "Benoit Saint Denis",
+        "success": 1
+    },
+    {
+        "date": "2024-03-09 00:00:00",
+        "r_fighter": "Rafael Dos Anjos",
+        "b_fighter": "Mateusz Gamrot",
+        "success": 1
+    },
+    {
+        "date": "2024-03-16 00:00:00",
+        "r_fighter": "Mitch Ramirez",
+        "b_fighter": "Thiago Moises",
+        "success": 1
+    },
+    {
+        "date": "2024-03-16 00:00:00",
+        "r_fighter": "Natan Levy",
+        "b_fighter": "Mike Davis",
+        "success": 0
+    },
+    {
+        "date": "2024-03-23 00:00:00",
+        "r_fighter": "Kurt Holobaugh",
+        "b_fighter": "Trey Ogden",
+        "success": 1
+    }
+]
