@@ -1,0 +1,33 @@
+- 정수형 데이터는 정수형 구간별로 히스토그램으로 시각화
+- 실수형 데이터는 실수형 구간별로 line graph로 시각화
+- 이전 경기 결과는 r_loses_total + r_wins_total을 사용했고 blue fighter도 마찬가지로 b_loses_total + b_wins_total을 사용했음
+
+
+![previous_fights](https://github.com/user-attachments/assets/265b5b27-6462-469a-afce-dc91900da87d)
+![int_wins_total](https://github.com/user-attachments/assets/e0aafde8-4bf0-485f-a956-330fa4699428)
+![int_td](https://github.com/user-attachments/assets/6948b963-15a4-4b4b-b81f-aaba82656e31)
+![int_td_att](https://github.com/user-attachments/assets/34f19736-6448-4245-b146-67a02032bcf8)
+![int_sub_att](https://github.com/user-attachments/assets/3a8b51b2-405d-4b6a-9f21-f49757f2d3b2)
+![int_str](https://github.com/user-attachments/assets/8b7e822f-406a-4a0c-a2be-46be82bbab4d)
+![int_str_att](https://github.com/user-attachments/assets/c7ee3e8e-dbc2-4902-a0bb-5e1c7d4a0a9a)
+![int_sig_str](https://github.com/user-attachments/assets/8ee4a67a-553b-4d79-a84c-78f6f4243f59)
+![int_sig_str_att](https://github.com/user-attachments/assets/c40eb60e-1042-4e92-891d-9386ac99790e)
+![int_rev](https://github.com/user-attachments/assets/1d662a1a-e1a4-4c74-8216-87f2250694f7)
+![int_losses_total](https://github.com/user-attachments/assets/02445008-60a3-48fd-a6df-0c861d319492)
+![int_kd](https://github.com/user-attachments/assets/84f800b7-1c2d-44f2-a30d-0bc191a620ec)
+![int_ctrl_sec](https://github.com/user-attachments/assets/cedafe6e-fc20-4868-8553-38c0a1bebba0)
+![int_age](https://github.com/user-attachments/assets/7c8db738-48c0-4a15-a7de-7abaffce988e)
+![float_weight](https://github.com/user-attachments/assets/9bb56e0b-fc50-4397-8c08-ab7b04ded522)
+![float_td_def_total](https://github.com/user-attachments/assets/e3f82dba-f847-4b4b-a84b-7e5742970273)
+![float_td_avg](https://github.com/user-attachments/assets/56d12c6e-ea28-4c47-b486-ca425bdc09b9)
+![float_td_acc](https://github.com/user-attachments/assets/3845401b-7ed5-46ed-ac84-6a8aacdb8e7c)
+![float_td_acc_total](https://github.com/user-attachments/assets/2925eb8b-3ce3-42e4-8f30-c1e20f18108b)
+![float_sub_avg](https://github.com/user-attachments/assets/5582c48e-cac3-4dd9-adda-d1c97c8c7ed8)
+![float_str_def_total](https://github.com/user-attachments/assets/0796b85f-62d2-46d2-983a-a9a543affc66)
+![float_str_acc](https://github.com/user-attachments/assets/edefcb43-f2d6-4e41-a22c-e30be952c916)
+![float_SLpM_total](https://github.com/user-attachments/assets/59894be2-d416-4823-8759-f5f6d02ea3ac)
+![float_sig_str_acc](https://github.com/user-attachments/assets/98d24316-2ad7-4d44-9519-0e5e2e6dfc08)
+![float_sig_str_acc_total](https://github.com/user-attachments/assets/f610822d-6514-4f50-b40d-909525f7994c)
+![float_SApM_total](https://github.com/user-attachments/assets/d55a0c0e-8b50-4e92-b8ba-54300a8e6436)
+![float_reach](https://github.com/user-attachments/assets/9fa5303c-df51-4bfc-b13d-ce8f2e87aecf)
+![float_height](https://github.com/user-attachments/assets/e7537f61-6120-4f66-93c8-98cdf1accd04)
