@@ -1,0 +1,978 @@
+[
+    {
+        "date": "2020-08-22 00:00:00",
+        "r_fighter": "Marcin Prachnio",
+        "b_fighter": "Mike Rodriguez",
+        "r_edge_count": 0,
+        "b_edge_count": 0,
+        "success": 0
+    },
+    {
+        "date": "2020-08-22 00:00:00",
+        "r_fighter": "Jordan Wright",
+        "b_fighter": "Ike Villanueva",
+        "r_edge_count": 0,
+        "b_edge_count": 0,
+        "success": 0
+    },
+    {
+        "date": "2020-08-29 00:00:00",
+        "r_fighter": "Anthony Smith",
+        "b_fighter": "Aleksandar Rakic",
+        "r_edge_count": 0,
+        "b_edge_count": 0,
+        "success": 1
+    },
+    {
+        "date": "2020-09-05 00:00:00",
+        "r_fighter": "Alonzo Menifield",
+        "b_fighter": "Ovince Saint Preux",
+        "r_edge_count": 0,
+        "b_edge_count": 11,
+        "success": 1
+    },
+    {
+        "date": "2020-09-12 00:00:00",
+        "r_fighter": "Ed Herman",
+        "b_fighter": "Mike Rodriguez",
+        "r_edge_count": 2,
+        "b_edge_count": 0,
+        "success": 1
+    },
+    {
+        "date": "2020-09-19 00:00:00",
+        "r_fighter": "Ryan Spann",
+        "b_fighter": "Johnny Walker",
+        "r_edge_count": 0,
+        "b_edge_count": 0,
+        "success": 0
+    },
+    {
+        "date": "2020-09-26 00:00:00",
+        "r_fighter": "Aleksa Camur",
+        "b_fighter": "William Knight",
+        "r_edge_count": 0,
+        "b_edge_count": 0,
+        "success": 1
+    },
+    {
+        "date": "2020-09-26 00:00:00",
+        "r_fighter": "Danilo Marques",
+        "b_fighter": "Khadis Ibragimov",
+        "r_edge_count": 0,
+        "b_edge_count": 0,
+        "success": 1
+    },
+    {
+        "date": "2020-10-17 00:00:00",
+        "r_fighter": "Jimmy Crute",
+        "b_fighter": "Modestas Bukauskas",
+        "r_edge_count": 0,
+        "b_edge_count": 0,
+        "success": 1
+    },
+    {
+        "date": "2020-10-17 00:00:00",
+        "r_fighter": "Maxim Grishin",
+        "b_fighter": "Gadzhimurad Antigulov",
+        "r_edge_count": 0,
+        "b_edge_count": 1,
+        "success": 0
+    },
+    {
+        "date": "2020-10-24 00:00:00",
+        "r_fighter": "Magomed Ankalaev",
+        "b_fighter": "Ion Cutelaba",
+        "r_edge_count": 0,
+        "b_edge_count": 3,
+        "success": 1
+    },
+    {
+        "date": "2020-10-31 00:00:00",
+        "r_fighter": "Dustin Jacoby",
+        "b_fighter": "Justin Ledet",
+        "r_edge_count": 0,
+        "b_edge_count": 0,
+        "success": 1
+    },
+    {
+        "date": "2020-11-07 00:00:00",
+        "r_fighter": "Thiago Santos",
+        "b_fighter": "Glover Teixeira",
+        "r_edge_count": 0,
+        "b_edge_count": 11,
+        "success": 0
+    },
+    {
+        "date": "2020-11-21 00:00:00",
+        "r_fighter": "Mauricio Rua",
+        "b_fighter": "Paul Craig",
+        "r_edge_count": 14,
+        "b_edge_count": 2,
+        "success": 1
+    },
+    {
+        "date": "2020-11-28 00:00:00",
+        "r_fighter": "Anthony Smith",
+        "b_fighter": "Devin Clark",
+        "r_edge_count": 0,
+        "b_edge_count": 1,
+        "success": 1
+    },
+    {
+        "date": "2020-12-05 00:00:00",
+        "r_fighter": "Roman Dolidze",
+        "b_fighter": "John Allan",
+        "r_edge_count": 0,
+        "b_edge_count": 0,
+        "success": 0
+    },
+    {
+        "date": "2020-12-05 00:00:00",
+        "r_fighter": "Jamahal Hill",
+        "b_fighter": "Ovince Saint Preux",
+        "r_edge_count": 0,
+        "b_edge_count": 11,
+        "success": 0
+    },
+    {
+        "date": "2021-01-20 00:00:00",
+        "r_fighter": "Vinicius Moreira",
+        "b_fighter": "Ike Villanueva",
+        "r_edge_count": 0,
+        "b_edge_count": 0,
+        "success": 1
+    },
+    {
+        "date": "2021-01-23 00:00:00",
+        "r_fighter": "Khalil Rountree Jr.",
+        "b_fighter": "Marcin Prachnio",
+        "r_edge_count": 2,
+        "b_edge_count": 0,
+        "success": 1
+    },
+    {
+        "date": "2021-02-06 00:00:00",
+        "r_fighter": "Mike Rodriguez",
+        "b_fighter": "Danilo Marques",
+        "r_edge_count": 0,
+        "b_edge_count": 0,
+        "success": 0
+    },
+    {
+        "date": "2021-02-27 00:00:00",
+        "r_fighter": "Maxim Grishin",
+        "b_fighter": "Dustin Jacoby",
+        "r_edge_count": 0,
+        "b_edge_count": 0,
+        "success": 1
+    },
+    {
+        "date": "2021-02-27 00:00:00",
+        "r_fighter": "Magomed Ankalaev",
+        "b_fighter": "Nikita Krylov",
+        "r_edge_count": 0,
+        "b_edge_count": 7,
+        "success": 0
+    },
+    {
+        "date": "2021-03-06 00:00:00",
+        "r_fighter": "Thiago Santos",
+        "b_fighter": "Aleksandar Rakic",
+        "r_edge_count": 0,
+        "b_edge_count": 0,
+        "success": 1
+    },
+    {
+        "date": "2021-03-06 00:00:00",
+        "r_fighter": "Kennedy Nzechukwu",
+        "b_fighter": "Carlos Ulberg",
+        "r_edge_count": 0,
+        "b_edge_count": 0,
+        "success": 1
+    },
+    {
+        "date": "2021-03-13 00:00:00",
+        "r_fighter": "Misha Cirkunov",
+        "b_fighter": "Ryan Spann",
+        "r_edge_count": 4,
+        "b_edge_count": 0,
+        "success": 1
+    },
+    {
+        "date": "2021-03-27 00:00:00",
+        "r_fighter": "Alonzo Menifield",
+        "b_fighter": "Fabio Cherant",
+        "r_edge_count": 0,
+        "b_edge_count": 0,
+        "success": 1
+    },
+    {
+        "date": "2021-03-27 00:00:00",
+        "r_fighter": "Modestas Bukauskas",
+        "b_fighter": "Michal Oleksiejczuk",
+        "r_edge_count": 0,
+        "b_edge_count": 0,
+        "success": 0
+    },
+    {
+        "date": "2021-04-10 00:00:00",
+        "r_fighter": "Da Woon Jung",
+        "b_fighter": "William Knight",
+        "r_edge_count": 0,
+        "b_edge_count": 0,
+        "success": 0
+    },
+    {
+        "date": "2021-04-24 00:00:00",
+        "r_fighter": "Jimmy Crute",
+        "b_fighter": "Anthony Smith",
+        "r_edge_count": 0,
+        "b_edge_count": 0,
+        "success": 0
+    },
+    {
+        "date": "2021-05-01 00:00:00",
+        "r_fighter": "Jiri Prochazka",
+        "b_fighter": "Dominick Reyes",
+        "r_edge_count": 0,
+        "b_edge_count": 0,
+        "success": 0
+    },
+    {
+        "date": "2021-06-12 00:00:00",
+        "r_fighter": "Paul Craig",
+        "b_fighter": "Jamahal Hill",
+        "r_edge_count": 2,
+        "b_edge_count": 0,
+        "success": 1
+    },
+    {
+        "date": "2021-06-12 00:00:00",
+        "r_fighter": "Darren Stewart",
+        "b_fighter": "Eryk Anders",
+        "r_edge_count": 1,
+        "b_edge_count": 0,
+        "success": 0
+    },
+    {
+        "date": "2021-06-19 00:00:00",
+        "r_fighter": "Aleksa Camur",
+        "b_fighter": "Nicolae Negumereanu",
+        "r_edge_count": 0,
+        "b_edge_count": 0,
+        "success": 1
+    },
+    {
+        "date": "2021-06-26 00:00:00",
+        "r_fighter": "Danilo Marques",
+        "b_fighter": "Kennedy Nzechukwu",
+        "r_edge_count": 0,
+        "b_edge_count": 0,
+        "success": 1
+    },
+    {
+        "date": "2021-06-26 00:00:00",
+        "r_fighter": "Marcin Prachnio",
+        "b_fighter": "Ike Villanueva",
+        "r_edge_count": 0,
+        "b_edge_count": 0,
+        "success": 0
+    },
+    {
+        "date": "2021-08-07 00:00:00",
+        "r_fighter": "Alonzo Menifield",
+        "b_fighter": "Ed Herman",
+        "r_edge_count": 0,
+        "b_edge_count": 2,
+        "success": 1
+    },
+    {
+        "date": "2021-08-21 00:00:00",
+        "r_fighter": "Fabio Cherant",
+        "b_fighter": "William Knight",
+        "r_edge_count": 0,
+        "b_edge_count": 0,
+        "success": 1
+    },
+    {
+        "date": "2021-08-28 00:00:00",
+        "r_fighter": "Dustin Jacoby",
+        "b_fighter": "Darren Stewart",
+        "r_edge_count": 0,
+        "b_edge_count": 1,
+        "success": 1
+    },
+    {
+        "date": "2021-09-04 00:00:00",
+        "r_fighter": "Modestas Bukauskas",
+        "b_fighter": "Khalil Rountree Jr.",
+        "r_edge_count": 0,
+        "b_edge_count": 2,
+        "success": 0
+    },
+    {
+        "date": "2021-09-18 00:00:00",
+        "r_fighter": "Anthony Smith",
+        "b_fighter": "Ryan Spann",
+        "r_edge_count": 0,
+        "b_edge_count": 0,
+        "success": 0
+    },
+    {
+        "date": "2021-09-18 00:00:00",
+        "r_fighter": "Devin Clark",
+        "b_fighter": "Ion Cutelaba",
+        "r_edge_count": 1,
+        "b_edge_count": 3,
+        "success": 0
+    },
+    {
+        "date": "2021-09-18 00:00:00",
+        "r_fighter": "Mike Rodriguez",
+        "b_fighter": "Tafon Nchukwi",
+        "r_edge_count": 0,
+        "b_edge_count": 0,
+        "success": 0
+    },
+    {
+        "date": "2021-10-02 00:00:00",
+        "r_fighter": "Thiago Santos",
+        "b_fighter": "Johnny Walker",
+        "r_edge_count": 0,
+        "b_edge_count": 0,
+        "success": 0
+    },
+    {
+        "date": "2021-10-23 00:00:00",
+        "r_fighter": "Paulo Costa",
+        "b_fighter": "Marvin Vettori",
+        "r_edge_count": 0,
+        "b_edge_count": 0,
+        "success": 1
+    },
+    {
+        "date": "2021-10-23 00:00:00",
+        "r_fighter": "Ike Villanueva",
+        "b_fighter": "Nicolae Negumereanu",
+        "r_edge_count": 0,
+        "b_edge_count": 0,
+        "success": 0
+    },
+    {
+        "date": "2021-10-30 00:00:00",
+        "r_fighter": "Michal Oleksiejczuk",
+        "b_fighter": "Shamil Gamzatov",
+        "r_edge_count": 0,
+        "b_edge_count": 0,
+        "success": 1
+    },
+    {
+        "date": "2021-10-30 00:00:00",
+        "r_fighter": "Magomed Ankalaev",
+        "b_fighter": "Volkan Oezdemir",
+        "r_edge_count": 0,
+        "b_edge_count": 1,
+        "success": 1
+    },
+    {
+        "date": "2021-11-06 00:00:00",
+        "r_fighter": "Dustin Jacoby",
+        "b_fighter": "John Allan",
+        "r_edge_count": 0,
+        "b_edge_count": 0,
+        "success": 1
+    },
+    {
+        "date": "2021-11-13 00:00:00",
+        "r_fighter": "Da Woon Jung",
+        "b_fighter": "Kennedy Nzechukwu",
+        "r_edge_count": 0,
+        "b_edge_count": 0,
+        "success": 0
+    },
+    {
+        "date": "2021-12-04 00:00:00",
+        "r_fighter": "Jamahal Hill",
+        "b_fighter": "Jimmy Crute",
+        "r_edge_count": 0,
+        "b_edge_count": 0,
+        "success": 1
+    },
+    {
+        "date": "2021-12-04 00:00:00",
+        "r_fighter": "Alonzo Menifield",
+        "b_fighter": "William Knight",
+        "r_edge_count": 0,
+        "b_edge_count": 0,
+        "success": 0
+    },
+    {
+        "date": "2022-02-05 00:00:00",
+        "r_fighter": "Brendan Allen",
+        "b_fighter": "Sam Alvey",
+        "r_edge_count": 0,
+        "b_edge_count": 0,
+        "success": 0
+    },
+    {
+        "date": "2022-02-05 00:00:00",
+        "r_fighter": "Danilo Marques",
+        "b_fighter": "Jailton Almeida",
+        "r_edge_count": 0,
+        "b_edge_count": 0,
+        "success": 0
+    },
+    {
+        "date": "2022-02-12 00:00:00",
+        "r_fighter": "Fabio Cherant",
+        "b_fighter": "Carlos Ulberg",
+        "r_edge_count": 0,
+        "b_edge_count": 0,
+        "success": 0
+    },
+    {
+        "date": "2022-02-19 00:00:00",
+        "r_fighter": "Jamahal Hill",
+        "b_fighter": "Johnny Walker",
+        "r_edge_count": 0,
+        "b_edge_count": 0,
+        "success": 0
+    },
+    {
+        "date": "2022-03-05 00:00:00",
+        "r_fighter": "Dustin Jacoby",
+        "b_fighter": "Michal Oleksiejczuk",
+        "r_edge_count": 0,
+        "b_edge_count": 0,
+        "success": 1
+    },
+    {
+        "date": "2022-03-05 00:00:00",
+        "r_fighter": "Nicolae Negumereanu",
+        "b_fighter": "Kennedy Nzechukwu",
+        "r_edge_count": 0,
+        "b_edge_count": 0,
+        "success": 1
+    },
+    {
+        "date": "2022-03-12 00:00:00",
+        "r_fighter": "Thiago Santos",
+        "b_fighter": "Magomed Ankalaev",
+        "r_edge_count": 0,
+        "b_edge_count": 0,
+        "success": 0
+    },
+    {
+        "date": "2022-03-12 00:00:00",
+        "r_fighter": "Azamat Murzakanov",
+        "b_fighter": "Tafon Nchukwi",
+        "r_edge_count": 0,
+        "b_edge_count": 0,
+        "success": 1
+    },
+    {
+        "date": "2022-03-12 00:00:00",
+        "r_fighter": "Karl Roberson",
+        "b_fighter": "Khalil Rountree Jr.",
+        "r_edge_count": 0,
+        "b_edge_count": 2,
+        "success": 1
+    },
+    {
+        "date": "2022-03-19 00:00:00",
+        "r_fighter": "Paul Craig",
+        "b_fighter": "Nikita Krylov",
+        "r_edge_count": 2,
+        "b_edge_count": 7,
+        "success": 1
+    },
+    {
+        "date": "2022-04-23 00:00:00",
+        "r_fighter": "Tyson Pedro",
+        "b_fighter": "Ike Villanueva",
+        "r_edge_count": 2,
+        "b_edge_count": 0,
+        "success": 1
+    },
+    {
+        "date": "2022-04-23 00:00:00",
+        "r_fighter": "Marcin Prachnio",
+        "b_fighter": "Philipe Lins",
+        "r_edge_count": 0,
+        "b_edge_count": 0,
+        "success": 0
+    },
+    {
+        "date": "2022-05-07 00:00:00",
+        "r_fighter": "Mauricio Rua",
+        "b_fighter": "Ovince Saint Preux",
+        "r_edge_count": 14,
+        "b_edge_count": 11,
+        "success": 1
+    },
+    {
+        "date": "2022-05-14 00:00:00",
+        "r_fighter": "Ion Cutelaba",
+        "b_fighter": "Ryan Spann",
+        "r_edge_count": 3,
+        "b_edge_count": 0,
+        "success": 1
+    },
+    {
+        "date": "2022-05-14 00:00:00",
+        "r_fighter": "Jan Blachowicz",
+        "b_fighter": "Aleksandar Rakic",
+        "r_edge_count": 5,
+        "b_edge_count": 0,
+        "success": 1
+    },
+    {
+        "date": "2022-06-04 00:00:00",
+        "r_fighter": "Askar Mozharov",
+        "b_fighter": "Alonzo Menifield",
+        "r_edge_count": 0,
+        "b_edge_count": 0,
+        "success": 1
+    },
+    {
+        "date": "2022-06-25 00:00:00",
+        "r_fighter": "Tafon Nchukwi",
+        "b_fighter": "Carlos Ulberg",
+        "r_edge_count": 0,
+        "b_edge_count": 0,
+        "success": 1
+    },
+    {
+        "date": "2022-07-09 00:00:00",
+        "r_fighter": "Kennedy Nzechukwu",
+        "b_fighter": "Karl Roberson",
+        "r_edge_count": 0,
+        "b_edge_count": 0,
+        "success": 1
+    },
+    {
+        "date": "2022-07-16 00:00:00",
+        "r_fighter": "Da Woon Jung",
+        "b_fighter": "Dustin Jacoby",
+        "r_edge_count": 0,
+        "b_edge_count": 0,
+        "success": 1
+    },
+    {
+        "date": "2022-07-23 00:00:00",
+        "r_fighter": "Nikita Krylov",
+        "b_fighter": "Alexander Gustafsson",
+        "r_edge_count": 7,
+        "b_edge_count": 11,
+        "success": 1
+    },
+    {
+        "date": "2022-07-23 00:00:00",
+        "r_fighter": "Paul Craig",
+        "b_fighter": "Volkan Oezdemir",
+        "r_edge_count": 2,
+        "b_edge_count": 1,
+        "success": 0
+    },
+    {
+        "date": "2022-07-30 00:00:00",
+        "r_fighter": "Anthony Smith",
+        "b_fighter": "Magomed Ankalaev",
+        "r_edge_count": 0,
+        "b_edge_count": 0,
+        "success": 0
+    },
+    {
+        "date": "2022-07-30 00:00:00",
+        "r_fighter": "Nicolae Negumereanu",
+        "b_fighter": "Ihor Potieria",
+        "r_edge_count": 0,
+        "b_edge_count": 0,
+        "success": 1
+    },
+    {
+        "date": "2022-08-06 00:00:00",
+        "r_fighter": "Jamahal Hill",
+        "b_fighter": "Thiago Santos",
+        "r_edge_count": 0,
+        "b_edge_count": 0,
+        "success": 1
+    },
+    {
+        "date": "2022-08-13 00:00:00",
+        "r_fighter": "Devin Clark",
+        "b_fighter": "Azamat Murzakanov",
+        "r_edge_count": 1,
+        "b_edge_count": 0,
+        "success": 0
+    },
+    {
+        "date": "2022-08-20 00:00:00",
+        "r_fighter": "Tyson Pedro",
+        "b_fighter": "Harry Hunsucker",
+        "r_edge_count": 2,
+        "b_edge_count": 0,
+        "success": 1
+    },
+    {
+        "date": "2022-09-10 00:00:00",
+        "r_fighter": "Ion Cutelaba",
+        "b_fighter": "Johnny Walker",
+        "r_edge_count": 3,
+        "b_edge_count": 0,
+        "success": 1
+    },
+    {
+        "date": "2022-10-15 00:00:00",
+        "r_fighter": "Alonzo Menifield",
+        "b_fighter": "Misha Cirkunov",
+        "r_edge_count": 0,
+        "b_edge_count": 4,
+        "success": 1
+    },
+    {
+        "date": "2022-10-22 00:00:00",
+        "r_fighter": "Volkan Oezdemir",
+        "b_fighter": "Nikita Krylov",
+        "r_edge_count": 1,
+        "b_edge_count": 7,
+        "success": 0
+    },
+    {
+        "date": "2022-10-29 00:00:00",
+        "r_fighter": "Khalil Rountree Jr.",
+        "b_fighter": "Dustin Jacoby",
+        "r_edge_count": 2,
+        "b_edge_count": 0,
+        "success": 0
+    },
+    {
+        "date": "2022-11-12 00:00:00",
+        "r_fighter": "Dominick Reyes",
+        "b_fighter": "Ryan Spann",
+        "r_edge_count": 0,
+        "b_edge_count": 0,
+        "success": 1
+    },
+    {
+        "date": "2022-11-12 00:00:00",
+        "r_fighter": "Carlos Ulberg",
+        "b_fighter": "Nicolae Negumereanu",
+        "r_edge_count": 0,
+        "b_edge_count": 0,
+        "success": 1
+    },
+    {
+        "date": "2022-11-19 00:00:00",
+        "r_fighter": "Ion Cutelaba",
+        "b_fighter": "Kennedy Nzechukwu",
+        "r_edge_count": 3,
+        "b_edge_count": 0,
+        "success": 1
+    },
+    {
+        "date": "2023-01-14 00:00:00",
+        "r_fighter": "Nassourdine Imavov",
+        "b_fighter": "Sean Strickland",
+        "r_edge_count": 0,
+        "b_edge_count": 0,
+        "success": 1
+    },
+    {
+        "date": "2023-01-21 00:00:00",
+        "r_fighter": "Mauricio Rua",
+        "b_fighter": "Ihor Potieria",
+        "r_edge_count": 14,
+        "b_edge_count": 0,
+        "success": 1
+    },
+    {
+        "date": "2023-01-21 00:00:00",
+        "r_fighter": "Paul Craig",
+        "b_fighter": "Johnny Walker",
+        "r_edge_count": 2,
+        "b_edge_count": 0,
+        "success": 1
+    },
+    {
+        "date": "2023-02-04 00:00:00",
+        "r_fighter": "Da Woon Jung",
+        "b_fighter": "Devin Clark",
+        "r_edge_count": 0,
+        "b_edge_count": 1,
+        "success": 1
+    },
+    {
+        "date": "2023-02-11 00:00:00",
+        "r_fighter": "Modestas Bukauskas",
+        "b_fighter": "Tyson Pedro",
+        "r_edge_count": 0,
+        "b_edge_count": 2,
+        "success": 1
+    },
+    {
+        "date": "2023-02-18 00:00:00",
+        "r_fighter": "Jordan Wright",
+        "b_fighter": "Zac Pauga",
+        "r_edge_count": 0,
+        "b_edge_count": 0,
+        "success": 1
+    },
+    {
+        "date": "2023-02-18 00:00:00",
+        "r_fighter": "William Knight",
+        "b_fighter": "Marcin Prachnio",
+        "r_edge_count": 0,
+        "b_edge_count": 0,
+        "success": 0
+    },
+    {
+        "date": "2023-02-18 00:00:00",
+        "r_fighter": "Philipe Lins",
+        "b_fighter": "Ovince Saint Preux",
+        "r_edge_count": 0,
+        "b_edge_count": 11,
+        "success": 0
+    },
+    {
+        "date": "2023-03-11 00:00:00",
+        "r_fighter": "Anton Turkalj",
+        "b_fighter": "Vitor Petrino",
+        "r_edge_count": 0,
+        "b_edge_count": 0,
+        "success": 1
+    },
+    {
+        "date": "2023-04-15 00:00:00",
+        "r_fighter": "Azamat Murzakanov",
+        "b_fighter": "Dustin Jacoby",
+        "r_edge_count": 0,
+        "b_edge_count": 0,
+        "success": 0
+    },
+    {
+        "date": "2023-04-15 00:00:00",
+        "r_fighter": "Ion Cutelaba",
+        "b_fighter": "Tanner Boser",
+        "r_edge_count": 3,
+        "b_edge_count": 0,
+        "success": 1
+    },
+    {
+        "date": "2023-04-15 00:00:00",
+        "r_fighter": "Ed Herman",
+        "b_fighter": "Zak Cummings",
+        "r_edge_count": 2,
+        "b_edge_count": 0,
+        "success": 0
+    },
+    {
+        "date": "2023-05-06 00:00:00",
+        "r_fighter": "Kennedy Nzechukwu",
+        "b_fighter": "Devin Clark",
+        "r_edge_count": 0,
+        "b_edge_count": 1,
+        "success": 1
+    },
+    {
+        "date": "2023-05-13 00:00:00",
+        "r_fighter": "Carlos Ulberg",
+        "b_fighter": "Ihor Potieria",
+        "r_edge_count": 0,
+        "b_edge_count": 0,
+        "success": 0
+    },
+    {
+        "date": "2023-05-13 00:00:00",
+        "r_fighter": "Anthony Smith",
+        "b_fighter": "Johnny Walker",
+        "r_edge_count": 0,
+        "b_edge_count": 0,
+        "success": 1
+    },
+    {
+        "date": "2023-06-03 00:00:00",
+        "r_fighter": "Maxim Grishin",
+        "b_fighter": "Philipe Lins",
+        "r_edge_count": 0,
+        "b_edge_count": 0,
+        "success": 1
+    },
+    {
+        "date": "2023-06-17 00:00:00",
+        "r_fighter": "Zac Pauga",
+        "b_fighter": "Modestas Bukauskas",
+        "r_edge_count": 0,
+        "b_edge_count": 0,
+        "success": 0
+    },
+    {
+        "date": "2023-07-08 00:00:00",
+        "r_fighter": "Vitor Petrino",
+        "b_fighter": "Marcin Prachnio",
+        "r_edge_count": 0,
+        "b_edge_count": 0,
+        "success": 1
+    },
+    {
+        "date": "2023-07-08 00:00:00",
+        "r_fighter": "Alonzo Menifield",
+        "b_fighter": "Jimmy Crute",
+        "r_edge_count": 0,
+        "b_edge_count": 0,
+        "success": 1
+    },
+    {
+        "date": "2023-07-29 00:00:00",
+        "r_fighter": "Alex Pereira",
+        "b_fighter": "Jan Blachowicz",
+        "r_edge_count": 0,
+        "b_edge_count": 5,
+        "success": 0
+    },
+    {
+        "date": "2023-08-05 00:00:00",
+        "r_fighter": "Dustin Jacoby",
+        "b_fighter": "Kennedy Nzechukwu",
+        "r_edge_count": 0,
+        "b_edge_count": 0,
+        "success": 1
+    },
+    {
+        "date": "2023-08-05 00:00:00",
+        "r_fighter": "Aleksa Camur",
+        "b_fighter": "Tanner Boser",
+        "r_edge_count": 0,
+        "b_edge_count": 0,
+        "success": 1
+    },
+    {
+        "date": "2023-08-12 00:00:00",
+        "r_fighter": "Khalil Rountree Jr.",
+        "b_fighter": "Chris Daukaus",
+        "r_edge_count": 2,
+        "b_edge_count": 0,
+        "success": 1
+    },
+    {
+        "date": "2023-08-26 00:00:00",
+        "r_fighter": "Anthony Smith",
+        "b_fighter": "Ryan Spann",
+        "r_edge_count": 0,
+        "b_edge_count": 0,
+        "success": 0
+    },
+    {
+        "date": "2023-09-02 00:00:00",
+        "r_fighter": "Volkan Oezdemir",
+        "b_fighter": "Bogdan Guskov",
+        "r_edge_count": 1,
+        "b_edge_count": 0,
+        "success": 1
+    },
+    {
+        "date": "2023-09-09 00:00:00",
+        "r_fighter": "Anton Turkalj",
+        "b_fighter": "Tyson Pedro",
+        "r_edge_count": 0,
+        "b_edge_count": 2,
+        "success": 1
+    },
+    {
+        "date": "2023-09-09 00:00:00",
+        "r_fighter": "Carlos Ulberg",
+        "b_fighter": "Da Woon Jung",
+        "r_edge_count": 0,
+        "b_edge_count": 0,
+        "success": 1
+    },
+    {
+        "date": "2023-11-04 00:00:00",
+        "r_fighter": "Vitor Petrino",
+        "b_fighter": "Modestas Bukauskas",
+        "r_edge_count": 0,
+        "b_edge_count": 0,
+        "success": 1
+    },
+    {
+        "date": "2023-12-02 00:00:00",
+        "r_fighter": "Rodolfo Bellato",
+        "b_fighter": "Ihor Potieria",
+        "r_edge_count": 0,
+        "b_edge_count": 0,
+        "success": 0
+    },
+    {
+        "date": "2023-12-09 00:00:00",
+        "r_fighter": "Khalil Rountree Jr.",
+        "b_fighter": "Anthony Smith",
+        "r_edge_count": 2,
+        "b_edge_count": 0,
+        "success": 1
+    },
+    {
+        "date": "2023-12-16 00:00:00",
+        "r_fighter": "Dustin Jacoby",
+        "b_fighter": "Alonzo Menifield",
+        "r_edge_count": 0,
+        "b_edge_count": 0,
+        "success": 0
+    },
+    {
+        "date": "2024-01-13 00:00:00",
+        "r_fighter": "Magomed Ankalaev",
+        "b_fighter": "Johnny Walker",
+        "r_edge_count": 0,
+        "b_edge_count": 0,
+        "success": 0
+    },
+    {
+        "date": "2024-02-10 00:00:00",
+        "r_fighter": "Marcin Prachnio",
+        "b_fighter": "Devin Clark",
+        "r_edge_count": 0,
+        "b_edge_count": 1,
+        "success": 1
+    },
+    {
+        "date": "2024-02-10 00:00:00",
+        "r_fighter": "Bogdan Guskov",
+        "b_fighter": "Zac Pauga",
+        "r_edge_count": 0,
+        "b_edge_count": 0,
+        "success": 0
+    },
+    {
+        "date": "2024-02-17 00:00:00",
+        "r_fighter": "Zhang Mingyang",
+        "b_fighter": "Brendson Ribeiro",
+        "r_edge_count": 0,
+        "b_edge_count": 0,
+        "success": 0
+    },
+    {
+        "date": "2024-03-02 00:00:00",
+        "r_fighter": "Vitor Petrino",
+        "b_fighter": "Tyson Pedro",
+        "r_edge_count": 0,
+        "b_edge_count": 2,
+        "success": 0
+    },
+    {
+        "date": "2024-03-09 00:00:00",
+        "r_fighter": "Philipe Lins",
+        "b_fighter": "Ion Cutelaba",
+        "r_edge_count": 0,
+        "b_edge_count": 3,
+        "success": 1
+    },
+    {
+        "date": "2024-03-16 00:00:00",
+        "r_fighter": "Ovince Saint Preux",
+        "b_fighter": "Kennedy Nzechukwu",
+        "r_edge_count": 11,
+        "b_edge_count": 0,
+        "success": 1
+    }
+]
