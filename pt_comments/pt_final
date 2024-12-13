@@ -80,21 +80,38 @@ GNN – Women’s fly에서 최고 성능
 
 
 
+
+
 [교수님 질문]
 
 1. 베이스라인도 feature set를 입력해서 단순 승패예측을 하는 건지?
-- Yes.
+
+- 맞습니다. 저희가 사용한 GNN 평가방식과 동일합니다.
+
+
 
 2. Feature set Normalization 한 건지?
-- No.
-- 만약 했다면 XGBoost가 더 유리했을 것.
+
+- 아니오, 그 부분은 수행하지 않았습니다.
+
+-> 만약 Normalization을 했다면 XGBoost 결과가 더 좋게 나왔을 것.
+
+
 
 3. 복잡도 향상에 도움이 됐다는 게 무슨 말인지?
-- hidden Channel 수를 늘렸다는 것.
--> Layer가 5개까지 필요했나 싶어. Overfitting의 원인이 되기도 한다.
--> 지금도 복잡도 증가 후 accuracy를 보면 heavyweight는 감소하기도 한다.
+
+- hidden Channel 수를 늘렸다는 것입니다.
+
+-> Layer가 5개까지 필요했나 싶어. 과도한 layer 수는 Overfitting의 원인이 되기도 한다.
+
+-> 지금도 복잡도 증가 후 accuracy를 보면 heavyweight는 감소하기도 하는데,
+   더 적은 layer로도 시도해 보면 다른 결과가 나왔을 수도 있었을 것.
+
+
 
 4. 대규모 공개 데이터셋은 Normalization이 다 되어있는 경우도 있지만,
-이번 프로젝트 같은 소규모 데이터셋에선 Normalization 전후 성능을 비교해보는 것도 가치가 있을 것.
+   이번 프로젝트 같은 소규모 데이터셋에선 Normalization 전후 성능을 비교해보는 것도 가치가 있을 것.
+
+
 
 5. 흥미로운 주제로 의미 있는 결과 낸 것으로 보임.
