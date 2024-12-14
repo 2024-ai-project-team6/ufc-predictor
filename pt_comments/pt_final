@@ -1,7 +1,8 @@
 <최종 발표>
-
 발표자: 홍여원
-목표 : 선수 개인의 통계뿐 아니라 관계 적용한 승패예측 모델
+
+[목표]
+선수 개인의 통계뿐 아니라 관계 적용한 UFC 경기 승패예측 모델
 
 
 
@@ -36,7 +37,8 @@ Kaggle – UFC Complete Dataset 사용
 [모델 구현]
 
 레이어 추가 - Accuracy 향상된 결과 확인
-K-Fold 교차 검증(K=5) 사용 – 최적의 값 탐색
+K-Fold 교차 검증 – 최적의 값 탐색
+(K = 5)
 -> learning_rate = 0.01
 -> initial hidden channels = 16
 -> dropout = 0.2
@@ -46,8 +48,8 @@ K-Fold 교차 검증(K=5) 사용 – 최적의 값 탐색
 [최종 성능]
 
 SVM보다 높은 성능
-나머지 3개 베이스라인보단 낮은 성능
-Women’s fly 체급에서는 최고 성능
+나머지 3개 베이스라인(LogisticRegression, RandomForest, XGBoost)보단 낮은 성능
+Women’s fly 체급에서는 4개 베이스라인보다 높은 성능
 
 
 
@@ -86,13 +88,13 @@ GNN – Women’s fly에서 최고 성능
 
 1. 베이스라인도 feature set를 입력해서 단순 승패예측을 하는 건지?
 
-- 맞습니다. 저희가 사용한 GNN 평가방식과 동일합니다.
+A. 맞습니다. 저희가 사용한 GNN 평가방식과 동일합니다.
 
 
 
 2. Feature set Normalization 한 건지?
 
-- 아니오, 그 부분은 수행하지 않았습니다.
+A. 아니오, 그 부분은 수행하지 않았습니다.
 
 -> 만약 Normalization을 했다면 XGBoost 결과가 더 좋게 나왔을 것.
 
@@ -100,7 +102,7 @@ GNN – Women’s fly에서 최고 성능
 
 3. 복잡도 향상에 도움이 됐다는 게 무슨 말인지?
 
-- hidden Channel 수를 늘렸다는 것입니다.
+A. hidden Channel 수를 늘렸다는 것입니다.
 
 -> Layer가 5개까지 필요했나 싶어. 과도한 layer 수는 Overfitting의 원인이 되기도 한다.
 
@@ -110,7 +112,8 @@ GNN – Women’s fly에서 최고 성능
 
 
 4. 대규모 공개 데이터셋은 Normalization이 다 되어있는 경우도 있지만,
-   이번 프로젝트 같은 소규모 데이터셋에선 Normalization 전후 성능을 비교해보는 것도 가치가 있을 것.
+   이번 프로젝트 같은 소규모 데이터셋에선 아닌 경우가 많기 때문에
+   Normalization 전후 성능을 비교해보는 것이 가치가 있을 것.
 
 
 
